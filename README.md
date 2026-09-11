@@ -97,7 +97,7 @@ uvx vk-mcp-ru doctor
 
 ## Родня
 
-Ядро вынесено в [ru-mcp-core](https://github.com/ilyautov/ru-mcp-core).
+Ядро вынесено в [schema-mcp-core](https://github.com/ilyautov/schema-mcp-core).
 Соседние серверы: [hh-mcp-ru](https://github.com/ilyautov/hh-mcp-ru), [diadoc-mcp-ru](https://github.com/ilyautov/diadoc-mcp-ru), [sbis-mcp-ru](https://github.com/ilyautov/sbis-mcp-ru), [chestny-znak-mcp-ru](https://github.com/ilyautov/chestny-znak-mcp-ru).
 Маркетплейсы живут отдельно: [marketplaces-mcp-ru](https://github.com/ilyautov/marketplaces-mcp-ru).
 
