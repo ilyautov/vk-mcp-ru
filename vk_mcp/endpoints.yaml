@@ -1,0 +1,4504 @@
+default_host: api.vk.com
+endpoints:
+- operation_id: vk_market_add
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.add
+  scope: market
+  safety: write
+  summary: Ads a new item to the market.
+  doc: https://dev.vk.com/method/market.add
+  pagination: none
+  params:
+    query: owner_id, name, description, category_id, price, old_price, deleted, main_photo_id, photo_ids,
+      video_ids, url, variant_ids
+- operation_id: vk_market_add_album
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.addAlbum
+  scope: market
+  safety: write
+  summary: Creates new collection of items
+  doc: https://dev.vk.com/method/market.addAlbum
+  pagination: none
+  params:
+    query: owner_id, title, photo_id, main_album, is_hidden
+- operation_id: vk_market_add_property
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.addProperty
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.addProperty. Adds property'
+  doc: https://dev.vk.com/method/market.addProperty
+  pagination: none
+  params:
+    query: group_id, title
+- operation_id: vk_market_add_property_variant
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.addPropertyVariant
+  scope: market
+  safety: write
+  summary: Adds property variant
+  doc: https://dev.vk.com/method/market.addPropertyVariant
+  pagination: none
+  params:
+    query: group_id, property_id, title
+- operation_id: vk_market_add_to_album
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.addToAlbum
+  scope: market
+  safety: write
+  summary: Adds an item to one or multiple collections.
+  doc: https://dev.vk.com/method/market.addToAlbum
+  pagination: none
+  params:
+    query: owner_id, item_ids, album_ids
+- operation_id: vk_market_create_comment
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.createComment
+  scope: market
+  safety: write
+  summary: Creates a new comment for an item.
+  doc: https://dev.vk.com/method/market.createComment
+  pagination: none
+  params:
+    query: owner_id, item_id, message, attachments, from_group, reply_to_comment, sticker_id, guid
+- operation_id: vk_market_delete
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.delete
+  scope: market
+  safety: destructive
+  summary: Deletes an item.
+  doc: https://dev.vk.com/method/market.delete
+  pagination: none
+  params:
+    query: owner_id, item_id
+- operation_id: vk_market_delete_album
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.deleteAlbum
+  scope: market
+  safety: destructive
+  summary: Deletes a collection of items.
+  doc: https://dev.vk.com/method/market.deleteAlbum
+  pagination: none
+  params:
+    query: owner_id, album_id
+- operation_id: vk_market_delete_comment
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.deleteComment
+  scope: market
+  safety: destructive
+  summary: Deletes an item's comment
+  doc: https://dev.vk.com/method/market.deleteComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_market_delete_property
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.deleteProperty
+  scope: market
+  safety: destructive
+  summary: 'Товары и магазин сообщества: market.deleteProperty'
+  doc: https://dev.vk.com/method/market.deleteProperty
+  pagination: none
+  params:
+    query: group_id, property_id
+- operation_id: vk_market_delete_property_variant
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.deletePropertyVariant
+  scope: market
+  safety: destructive
+  summary: 'Товары и магазин сообщества: market.deletePropertyVariant'
+  doc: https://dev.vk.com/method/market.deletePropertyVariant
+  pagination: none
+  params:
+    query: group_id, variant_id
+- operation_id: vk_market_edit
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.edit
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.edit. Edits an item.'
+  doc: https://dev.vk.com/method/market.edit
+  pagination: none
+  params:
+    query: owner_id, item_id, name, description, category_id, price, old_price, deleted, main_photo_id,
+      photo_ids, video_ids, url
+- operation_id: vk_market_edit_album
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.editAlbum
+  scope: market
+  safety: write
+  summary: Edits a collection of items
+  doc: https://dev.vk.com/method/market.editAlbum
+  pagination: none
+  params:
+    query: owner_id, album_id, title, photo_id, main_album, is_hidden
+- operation_id: vk_market_edit_comment
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.editComment
+  scope: market
+  safety: write
+  summary: Chages item comment's text
+  doc: https://dev.vk.com/method/market.editComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, message, attachments
+- operation_id: vk_market_edit_order
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.editOrder
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.editOrder. Edit order'
+  doc: https://dev.vk.com/method/market.editOrder
+  pagination: none
+  params:
+    query: user_id, order_id, merchant_comment, status, track_number, payment_status, delivery_price,
+      width, length, height, weight, comment_for_user
+- operation_id: vk_market_edit_property
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.editProperty
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.editProperty. Adds property'
+  doc: https://dev.vk.com/method/market.editProperty
+  pagination: none
+  params:
+    query: group_id, property_id, title
+- operation_id: vk_market_edit_property_variant
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.editPropertyVariant
+  scope: market
+  safety: write
+  summary: Edit property variant name
+  doc: https://dev.vk.com/method/market.editPropertyVariant
+  pagination: none
+  params:
+    query: group_id, variant_id, title
+- operation_id: vk_market_filter_categories
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.filterCategories
+  scope: market
+  safety: write
+  summary: Returns a filter list of market categories.
+  doc: https://dev.vk.com/method/market.filterCategories
+  pagination: none
+  params:
+    query: category_id, query, count
+- operation_id: vk_market_get
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.get
+  scope: market
+  safety: read
+  summary: Returns items list for a community.
+  doc: https://dev.vk.com/method/market.get
+  pagination: offset
+  params:
+    query: owner_id, album_id, count, offset, extended, date_from, date_to, need_variants, with_disabled,
+      fields
+- operation_id: vk_market_get_album_by_id
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getAlbumById
+  scope: market
+  safety: read
+  summary: Returns items album's data
+  doc: https://dev.vk.com/method/market.getAlbumById
+  pagination: none
+  params:
+    query: owner_id, album_ids
+- operation_id: vk_market_get_albums
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getAlbums
+  scope: market
+  safety: read
+  summary: Returns community's market collections list.
+  doc: https://dev.vk.com/method/market.getAlbums
+  pagination: offset
+  params:
+    query: owner_id, offset, count
+- operation_id: vk_market_get_by_id
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getById
+  scope: market
+  safety: read
+  summary: Returns information about market items by their ids.
+  doc: https://dev.vk.com/method/market.getById
+  pagination: none
+  params:
+    query: item_ids, extended
+- operation_id: vk_market_get_categories
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getCategories
+  scope: market
+  safety: read
+  summary: Returns a list of market categories.
+  doc: https://dev.vk.com/method/market.getCategories
+  pagination: none
+  params:
+    query: group_id, album_id
+- operation_id: vk_market_get_comments
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getComments
+  scope: market
+  safety: read
+  summary: Returns comments list for an item.
+  doc: https://dev.vk.com/method/market.getComments
+  pagination: offset
+  params:
+    query: owner_id, item_id, need_likes, start_comment_id, offset, count, sort, extended, fields
+- operation_id: vk_market_get_faves_for_attach
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getFavesForAttach
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.getFavesForAttach'
+  doc: https://dev.vk.com/method/market.getFavesForAttach
+  pagination: offset
+  params:
+    query: current_group_id, public_only, offset, count
+- operation_id: vk_market_get_group_orders
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getGroupOrders
+  scope: market
+  safety: read
+  summary: Get market orders
+  doc: https://dev.vk.com/method/market.getGroupOrders
+  pagination: offset
+  params:
+    query: group_id, offset, count
+- operation_id: vk_market_get_order_by_id
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getOrderById
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.getOrderById. Get order'
+  doc: https://dev.vk.com/method/market.getOrderById
+  pagination: none
+  params:
+    query: user_id, order_id, extended
+- operation_id: vk_market_get_order_items
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getOrderItems
+  scope: market
+  safety: read
+  summary: Get market items in the order
+  doc: https://dev.vk.com/method/market.getOrderItems
+  pagination: offset
+  params:
+    query: user_id, order_id, offset, count
+- operation_id: vk_market_get_orders
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getOrders
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.getOrders'
+  doc: https://dev.vk.com/method/market.getOrders
+  pagination: offset
+  params:
+    query: offset, count, extended, date_from, date_to
+- operation_id: vk_market_get_product_photo_upload_server
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getProductPhotoUploadServer
+  scope: market
+  safety: read
+  summary: Returns the server address for market photo upload.
+  doc: https://dev.vk.com/method/market.getProductPhotoUploadServer
+  pagination: none
+  params:
+    query: group_id, bulk
+- operation_id: vk_market_get_properties
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.getProperties
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.getProperties. Get properties'
+  doc: https://dev.vk.com/method/market.getProperties
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_market_group_items
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.groupItems
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.groupItems'
+  doc: https://dev.vk.com/method/market.groupItems
+  pagination: none
+  params:
+    query: group_id, item_ids, item_group_id
+- operation_id: vk_market_remove_from_album
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.removeFromAlbum
+  scope: market
+  safety: destructive
+  summary: Removes an item from one or multiple collections.
+  doc: https://dev.vk.com/method/market.removeFromAlbum
+  pagination: none
+  params:
+    query: owner_id, item_id, album_ids
+- operation_id: vk_market_reorder_albums
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.reorderAlbums
+  scope: market
+  safety: write
+  summary: Reorders the collections list.
+  doc: https://dev.vk.com/method/market.reorderAlbums
+  pagination: none
+  params:
+    query: owner_id, album_id, before, after
+- operation_id: vk_market_reorder_items
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.reorderItems
+  scope: market
+  safety: write
+  summary: Changes item place in a collection.
+  doc: https://dev.vk.com/method/market.reorderItems
+  pagination: none
+  params:
+    query: owner_id, album_id, item_id, before, after
+- operation_id: vk_market_report
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.report
+  scope: market
+  safety: write
+  summary: Sends a complaint to the item.
+  doc: https://dev.vk.com/method/market.report
+  pagination: none
+  params:
+    query: owner_id, item_id, reason
+- operation_id: vk_market_report_comment
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.reportComment
+  scope: market
+  safety: write
+  summary: Sends a complaint to the item's comment.
+  doc: https://dev.vk.com/method/market.reportComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, reason
+- operation_id: vk_market_restore
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.restore
+  scope: market
+  safety: write
+  summary: Restores recently deleted item
+  doc: https://dev.vk.com/method/market.restore
+  pagination: none
+  params:
+    query: owner_id, item_id
+- operation_id: vk_market_restore_comment
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.restoreComment
+  scope: market
+  safety: write
+  summary: Restores a recently deleted comment
+  doc: https://dev.vk.com/method/market.restoreComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_market_save_product_photo
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.saveProductPhoto
+  scope: market
+  safety: write
+  summary: Save market photo after upload.
+  doc: https://dev.vk.com/method/market.saveProductPhoto
+  pagination: none
+  params:
+    query: upload_response
+- operation_id: vk_market_save_product_photo_bulk
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.saveProductPhotoBulk
+  scope: market
+  safety: write
+  summary: Bulk save market photo after upload.
+  doc: https://dev.vk.com/method/market.saveProductPhotoBulk
+  pagination: none
+  params:
+    query: upload_response
+- operation_id: vk_market_search
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.search
+  scope: market
+  safety: read
+  summary: Searches market items in a community's catalog
+  doc: https://dev.vk.com/method/market.search
+  pagination: offset
+  params:
+    query: owner_id, album_id, q, price_from, price_to, sort, rev, offset, count, extended, status, need_variants
+- operation_id: vk_market_search_items
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.searchItems
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.searchItems'
+  doc: https://dev.vk.com/method/market.searchItems
+  pagination: offset
+  params:
+    query: q, offset, count, category_id, price_from, price_to, sort_by, sort_direction, country, city
+- operation_id: vk_market_search_items_basic
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.searchItemsBasic
+  scope: market
+  safety: read
+  summary: 'Товары и магазин сообщества: market.searchItemsBasic'
+  doc: https://dev.vk.com/method/market.searchItemsBasic
+  pagination: offset
+  params:
+    query: q, offset, count, category_id, price_from, price_to, sort_by, sort_direction, country, city,
+      only_my_groups
+- operation_id: vk_market_ungroup_items
+  section: market
+  method: POST
+  host: api.vk.com
+  path: /method/market.ungroupItems
+  scope: market
+  safety: write
+  summary: 'Товары и магазин сообщества: market.ungroupItems'
+  doc: https://dev.vk.com/method/market.ungroupItems
+  pagination: none
+  params:
+    query: group_id, item_group_id
+- operation_id: vk_groups_add_address
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.addAddress
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.addAddress'
+  doc: https://dev.vk.com/method/groups.addAddress
+  pagination: none
+  params:
+    query: group_id, title, address, additional_address, city_id, metro_id, latitude, longitude, phone,
+      work_info_status, timetable, is_main_address
+- operation_id: vk_groups_add_callback_server
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.addCallbackServer
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.addCallbackServer'
+  doc: https://dev.vk.com/method/groups.addCallbackServer
+  pagination: none
+  params:
+    query: group_id, url, title, secret_key
+- operation_id: vk_groups_add_link
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.addLink
+  scope: groups
+  safety: write
+  summary: Allows to add a link to the community.
+  doc: https://dev.vk.com/method/groups.addLink
+  pagination: none
+  params:
+    query: group_id, link, text
+- operation_id: vk_groups_approve_request
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.approveRequest
+  scope: groups
+  safety: write
+  summary: Allows to approve join request to the community.
+  doc: https://dev.vk.com/method/groups.approveRequest
+  pagination: none
+  params:
+    query: group_id, user_id
+- operation_id: vk_groups_ban
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.ban
+  scope: groups
+  safety: destructive
+  summary: 'Сообщества: groups.ban'
+  doc: https://dev.vk.com/method/groups.ban
+  pagination: none
+  params:
+    query: group_id, owner_id, end_date, reason, comment, comment_visible
+- operation_id: vk_groups_create
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.create
+  scope: groups
+  safety: write
+  summary: Creates a new community.
+  doc: https://dev.vk.com/method/groups.create
+  pagination: none
+  params:
+    query: title, description, type, public_category, public_subcategory, subtype
+- operation_id: vk_groups_delete_address
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.deleteAddress
+  scope: groups
+  safety: destructive
+  summary: 'Сообщества: groups.deleteAddress'
+  doc: https://dev.vk.com/method/groups.deleteAddress
+  pagination: none
+  params:
+    query: group_id, address_id
+- operation_id: vk_groups_delete_callback_server
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.deleteCallbackServer
+  scope: groups
+  safety: destructive
+  summary: 'Сообщества: groups.deleteCallbackServer'
+  doc: https://dev.vk.com/method/groups.deleteCallbackServer
+  pagination: none
+  params:
+    query: group_id, server_id
+- operation_id: vk_groups_delete_link
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.deleteLink
+  scope: groups
+  safety: destructive
+  summary: Allows to delete a link from the community.
+  doc: https://dev.vk.com/method/groups.deleteLink
+  pagination: none
+  params:
+    query: group_id, link_id
+- operation_id: vk_groups_disable_online
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.disableOnline
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.disableOnline'
+  doc: https://dev.vk.com/method/groups.disableOnline
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_edit
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.edit
+  scope: groups
+  safety: write
+  summary: Edits a community.
+  doc: https://dev.vk.com/method/groups.edit
+  pagination: none
+  params:
+    query: group_id, title, description, screen_name, access, website, subject, email, phone, rss, event_start_date,
+      event_finish_date
+- operation_id: vk_groups_edit_address
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.editAddress
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.editAddress'
+  doc: https://dev.vk.com/method/groups.editAddress
+  pagination: none
+  params:
+    query: group_id, address_id, title, address, additional_address, city_id, metro_id, latitude, longitude,
+      phone, work_info_status, timetable
+- operation_id: vk_groups_edit_callback_server
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.editCallbackServer
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.editCallbackServer'
+  doc: https://dev.vk.com/method/groups.editCallbackServer
+  pagination: none
+  params:
+    query: group_id, server_id, url, title, secret_key
+- operation_id: vk_groups_edit_link
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.editLink
+  scope: groups
+  safety: write
+  summary: Allows to edit a link in the community.
+  doc: https://dev.vk.com/method/groups.editLink
+  pagination: none
+  params:
+    query: group_id, link_id, text
+- operation_id: vk_groups_edit_manager
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.editManager
+  scope: groups
+  safety: write
+  summary: Allows to add, remove or edit the community manager.
+  doc: https://dev.vk.com/method/groups.editManager
+  pagination: none
+  params:
+    query: group_id, user_id, role, is_call_operator, is_contact, contact_position, contact_phone, contact_email
+- operation_id: vk_groups_enable_online
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.enableOnline
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.enableOnline'
+  doc: https://dev.vk.com/method/groups.enableOnline
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.get
+  scope: groups
+  safety: read
+  summary: Returns a list of the communities to which a user belongs.
+  doc: https://dev.vk.com/method/groups.get
+  pagination: offset
+  params:
+    query: user_id, extended, filter, fields, offset, count
+- operation_id: vk_groups_get_addresses
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getAddresses
+  scope: groups
+  safety: read
+  summary: Returns a list of community addresses.
+  doc: https://dev.vk.com/method/groups.getAddresses
+  pagination: offset
+  params:
+    query: group_id, address_ids, latitude, longitude, offset, count, fields
+- operation_id: vk_groups_get_banned
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getBanned
+  scope: groups
+  safety: read
+  summary: Returns a list of users on a community blacklist.
+  doc: https://dev.vk.com/method/groups.getBanned
+  pagination: offset
+  params:
+    query: group_id, offset, count, fields, owner_id
+- operation_id: vk_groups_get_by_id
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getById
+  scope: groups
+  safety: read
+  summary: Returns information about communities by their IDs.
+  doc: https://dev.vk.com/method/groups.getById
+  pagination: none
+  params:
+    query: group_ids, group_id, fields
+- operation_id: vk_groups_get_callback_confirmation_code
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getCallbackConfirmationCode
+  scope: groups
+  safety: read
+  summary: Returns Callback API confirmation code for the community.
+  doc: https://dev.vk.com/method/groups.getCallbackConfirmationCode
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_callback_servers
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getCallbackServers
+  scope: groups
+  safety: read
+  summary: 'Сообщества: groups.getCallbackServers'
+  doc: https://dev.vk.com/method/groups.getCallbackServers
+  pagination: none
+  params:
+    query: group_id, server_ids
+- operation_id: vk_groups_get_callback_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getCallbackSettings
+  scope: groups
+  safety: read
+  summary: Returns [vk.com/dev/callback_api|Callback API] notifications settings.
+  doc: https://dev.vk.com/method/groups.getCallbackSettings
+  pagination: none
+  params:
+    query: group_id, server_id
+- operation_id: vk_groups_get_catalog_info
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getCatalogInfo
+  scope: groups
+  safety: read
+  summary: Returns categories list for communities catalog
+  doc: https://dev.vk.com/method/groups.getCatalogInfo
+  pagination: none
+  params:
+    query: extended, subcategories
+- operation_id: vk_groups_get_invited_users
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getInvitedUsers
+  scope: groups
+  safety: read
+  summary: Returns invited users list of a community
+  doc: https://dev.vk.com/method/groups.getInvitedUsers
+  pagination: offset
+  params:
+    query: group_id, offset, count, fields, name_case
+- operation_id: vk_groups_get_invites
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getInvites
+  scope: groups
+  safety: read
+  summary: Returns a list of invitations to join communities and events.
+  doc: https://dev.vk.com/method/groups.getInvites
+  pagination: offset
+  params:
+    query: offset, count, extended
+- operation_id: vk_groups_get_long_poll_server
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getLongPollServer
+  scope: groups
+  safety: read
+  summary: Returns the data needed to query a Long Poll server for events
+  doc: https://dev.vk.com/method/groups.getLongPollServer
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_long_poll_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getLongPollSettings
+  scope: groups
+  safety: read
+  summary: Returns Long Poll notification settings
+  doc: https://dev.vk.com/method/groups.getLongPollSettings
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_members
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getMembers
+  scope: groups
+  safety: read
+  summary: Returns a list of community members.
+  doc: https://dev.vk.com/method/groups.getMembers
+  pagination: offset
+  params:
+    query: group_id, sort, offset, count, fields, filter
+- operation_id: vk_groups_get_online_status
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getOnlineStatus
+  scope: groups
+  safety: read
+  summary: 'Сообщества: groups.getOnlineStatus'
+  doc: https://dev.vk.com/method/groups.getOnlineStatus
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_requests
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getRequests
+  scope: groups
+  safety: read
+  summary: Returns a list of requests to the community.
+  doc: https://dev.vk.com/method/groups.getRequests
+  pagination: offset
+  params:
+    query: group_id, offset, count, fields
+- operation_id: vk_groups_get_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getSettings
+  scope: groups
+  safety: read
+  summary: Returns community settings.
+  doc: https://dev.vk.com/method/groups.getSettings
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_tag_list
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getTagList
+  scope: groups
+  safety: read
+  summary: List of group's tags
+  doc: https://dev.vk.com/method/groups.getTagList
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_get_token_permissions
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.getTokenPermissions
+  scope: groups
+  safety: read
+  summary: 'Сообщества: groups.getTokenPermissions'
+  doc: https://dev.vk.com/method/groups.getTokenPermissions
+  pagination: none
+- operation_id: vk_groups_invite
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.invite
+  scope: groups
+  safety: write
+  summary: Allows to invite friends to the community.
+  doc: https://dev.vk.com/method/groups.invite
+  pagination: none
+  params:
+    query: group_id, user_id, user_ids_list
+- operation_id: vk_groups_is_member
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.isMember
+  scope: groups
+  safety: read
+  summary: Returns information specifying whether a user is a member of a community.
+  doc: https://dev.vk.com/method/groups.isMember
+  pagination: none
+  params:
+    query: group_id, user_id, user_ids, extended
+- operation_id: vk_groups_join
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.join
+  scope: groups
+  safety: write
+  summary: With this method you can join the group or public page, and also confirm your participation
+    in an event.
+  doc: https://dev.vk.com/method/groups.join
+  pagination: none
+  params:
+    query: group_id, not_sure
+- operation_id: vk_groups_leave
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.leave
+  scope: groups
+  safety: write
+  summary: With this method you can leave a group, public page, or event.
+  doc: https://dev.vk.com/method/groups.leave
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_groups_remove_user
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.removeUser
+  scope: groups
+  safety: destructive
+  summary: Removes a user from the community.
+  doc: https://dev.vk.com/method/groups.removeUser
+  pagination: none
+  params:
+    query: group_id, user_id
+- operation_id: vk_groups_reorder_link
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.reorderLink
+  scope: groups
+  safety: write
+  summary: Allows to reorder links in the community.
+  doc: https://dev.vk.com/method/groups.reorderLink
+  pagination: none
+  params:
+    query: group_id, link_id, after
+- operation_id: vk_groups_search
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.search
+  scope: groups
+  safety: read
+  summary: Returns a list of communities matching the search criteria.
+  doc: https://dev.vk.com/method/groups.search
+  pagination: offset
+  params:
+    query: q, type, country_id, city_id, future, market, sort, offset, count
+- operation_id: vk_groups_set_callback_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.setCallbackSettings
+  scope: groups
+  safety: write
+  summary: Allow to set notifications settings for group.
+  doc: https://dev.vk.com/method/groups.setCallbackSettings
+  pagination: none
+  params:
+    query: group_id, server_id, api_version, message_new, message_reply, message_allow, message_edit,
+      message_deny, message_typing_state, message_read, photo_new, audio_new
+- operation_id: vk_groups_set_long_poll_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.setLongPollSettings
+  scope: groups
+  safety: write
+  summary: Sets Long Poll notification settings
+  doc: https://dev.vk.com/method/groups.setLongPollSettings
+  pagination: none
+  params:
+    query: group_id, enabled, api_version, message_new, message_reply, message_allow, message_deny, message_edit,
+      message_typing_state, message_read, photo_new, audio_new
+- operation_id: vk_groups_set_settings
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.setSettings
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.setSettings'
+  doc: https://dev.vk.com/method/groups.setSettings
+  pagination: none
+  params:
+    query: group_id, messages, bots_capabilities, bots_start_button, bots_add_to_chat, bot_online_booking_enabled
+- operation_id: vk_groups_set_user_note
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.setUserNote
+  scope: groups
+  safety: write
+  summary: In order to save note about group participant
+  doc: https://dev.vk.com/method/groups.setUserNote
+  pagination: none
+  params:
+    query: group_id, user_id, note
+- operation_id: vk_groups_tag_add
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.tagAdd
+  scope: groups
+  safety: write
+  summary: Add new group's tag
+  doc: https://dev.vk.com/method/groups.tagAdd
+  pagination: none
+  params:
+    query: group_id, tag_name, tag_color
+- operation_id: vk_groups_tag_bind
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.tagBind
+  scope: groups
+  safety: write
+  summary: Bind or unbind group's tag to user
+  doc: https://dev.vk.com/method/groups.tagBind
+  pagination: none
+  params:
+    query: group_id, tag_id, user_id, act
+- operation_id: vk_groups_tag_delete
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.tagDelete
+  scope: groups
+  safety: destructive
+  summary: Delete group's tag
+  doc: https://dev.vk.com/method/groups.tagDelete
+  pagination: none
+  params:
+    query: group_id, tag_id
+- operation_id: vk_groups_tag_update
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.tagUpdate
+  scope: groups
+  safety: write
+  summary: Update group's tag
+  doc: https://dev.vk.com/method/groups.tagUpdate
+  pagination: none
+  params:
+    query: group_id, tag_id, tag_name
+- operation_id: vk_groups_toggle_market
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.toggleMarket
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.toggleMarket'
+  doc: https://dev.vk.com/method/groups.toggleMarket
+  pagination: none
+  params:
+    query: group_id, state, ref
+- operation_id: vk_groups_unban
+  section: groups
+  method: POST
+  host: api.vk.com
+  path: /method/groups.unban
+  scope: groups
+  safety: write
+  summary: 'Сообщества: groups.unban'
+  doc: https://dev.vk.com/method/groups.unban
+  pagination: none
+  params:
+    query: group_id, owner_id
+- operation_id: vk_ads_add_office_users
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.addOfficeUsers
+  scope: ads
+  safety: write
+  summary: Adds managers and/or supervisors to advertising account.
+  doc: https://dev.vk.com/method/ads.addOfficeUsers
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_check_link
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.checkLink
+  scope: ads
+  safety: read
+  summary: Allows to check the ad link.
+  doc: https://dev.vk.com/method/ads.checkLink
+  pagination: none
+  params:
+    query: account_id, link_type, link_url, campaign_id
+- operation_id: vk_ads_create_ads
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createAds
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.createAds. Creates ads.'
+  doc: https://dev.vk.com/method/ads.createAds
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_create_campaigns
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createCampaigns
+  scope: ads
+  safety: write
+  summary: Creates advertising campaigns.
+  doc: https://dev.vk.com/method/ads.createCampaigns
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_create_clients
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createClients
+  scope: ads
+  safety: write
+  summary: Creates clients of an advertising agency.
+  doc: https://dev.vk.com/method/ads.createClients
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_create_lookalike_request
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createLookalikeRequest
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.createLookalikeRequest'
+  doc: https://dev.vk.com/method/ads.createLookalikeRequest
+  pagination: none
+  params:
+    query: account_id, client_id, source_type, retargeting_group_id
+- operation_id: vk_ads_create_target_group
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createTargetGroup
+  scope: ads
+  safety: write
+  summary: Creates a group to re-target ads for users who visited advertiser's site (viewed information
+    about the product, registered, etc.).
+  doc: https://dev.vk.com/method/ads.createTargetGroup
+  pagination: none
+  params:
+    query: account_id, client_id, name, lifetime, target_pixel_id, target_pixel_rules
+- operation_id: vk_ads_create_target_pixel
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.createTargetPixel
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.createTargetPixel'
+  doc: https://dev.vk.com/method/ads.createTargetPixel
+  pagination: none
+  params:
+    query: account_id, client_id, name, domain, category_id
+- operation_id: vk_ads_delete_ads
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.deleteAds
+  scope: ads
+  safety: destructive
+  summary: 'Реклама (кабинет VK Ads): ads.deleteAds. Archives ads.'
+  doc: https://dev.vk.com/method/ads.deleteAds
+  pagination: none
+  params:
+    query: account_id, ids
+- operation_id: vk_ads_delete_campaigns
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.deleteCampaigns
+  scope: ads
+  safety: destructive
+  summary: Archives advertising campaigns.
+  doc: https://dev.vk.com/method/ads.deleteCampaigns
+  pagination: none
+  params:
+    query: account_id, ids
+- operation_id: vk_ads_delete_clients
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.deleteClients
+  scope: ads
+  safety: destructive
+  summary: Archives clients of an advertising agency.
+  doc: https://dev.vk.com/method/ads.deleteClients
+  pagination: none
+  params:
+    query: account_id, ids
+- operation_id: vk_ads_delete_target_group
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.deleteTargetGroup
+  scope: ads
+  safety: destructive
+  summary: Deletes a retarget group.
+  doc: https://dev.vk.com/method/ads.deleteTargetGroup
+  pagination: none
+  params:
+    query: account_id, client_id, target_group_id
+- operation_id: vk_ads_delete_target_pixel
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.deleteTargetPixel
+  scope: ads
+  safety: destructive
+  summary: 'Реклама (кабинет VK Ads): ads.deleteTargetPixel'
+  doc: https://dev.vk.com/method/ads.deleteTargetPixel
+  pagination: none
+  params:
+    query: account_id, client_id, target_pixel_id
+- operation_id: vk_ads_get_accounts
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getAccounts
+  scope: ads
+  safety: read
+  summary: Returns a list of advertising accounts.
+  doc: https://dev.vk.com/method/ads.getAccounts
+  pagination: none
+- operation_id: vk_ads_get_ads
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getAds
+  scope: ads
+  safety: read
+  summary: Returns number of ads.
+  doc: https://dev.vk.com/method/ads.getAds
+  pagination: offset
+  params:
+    query: account_id, client_id, include_deleted, only_deleted, campaign_ids, ad_ids, limit, offset
+- operation_id: vk_ads_get_ads_layout
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getAdsLayout
+  scope: ads
+  safety: read
+  summary: Returns descriptions of ad layouts.
+  doc: https://dev.vk.com/method/ads.getAdsLayout
+  pagination: offset
+  params:
+    query: account_id, client_id, include_deleted, only_deleted, campaign_ids, ad_ids, limit, offset
+- operation_id: vk_ads_get_ads_targeting
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getAdsTargeting
+  scope: ads
+  safety: read
+  summary: Returns ad targeting parameters.
+  doc: https://dev.vk.com/method/ads.getAdsTargeting
+  pagination: offset
+  params:
+    query: account_id, client_id, include_deleted, only_deleted, campaign_ids, ad_ids, limit, offset
+- operation_id: vk_ads_get_budget
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getBudget
+  scope: ads
+  safety: read
+  summary: Returns current budget of the advertising account.
+  doc: https://dev.vk.com/method/ads.getBudget
+  pagination: none
+  params:
+    query: account_id
+- operation_id: vk_ads_get_campaigns
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getCampaigns
+  scope: ads
+  safety: read
+  summary: Returns a list of campaigns in an advertising account.
+  doc: https://dev.vk.com/method/ads.getCampaigns
+  pagination: none
+  params:
+    query: account_id, client_id, include_deleted, campaign_ids, fields
+- operation_id: vk_ads_get_categories
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getCategories
+  scope: ads
+  safety: read
+  summary: Returns a list of possible ad categories.
+  doc: https://dev.vk.com/method/ads.getCategories
+  pagination: none
+  params:
+    query: lang
+- operation_id: vk_ads_get_clients
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getClients
+  scope: ads
+  safety: read
+  summary: Returns a list of advertising agency's clients.
+  doc: https://dev.vk.com/method/ads.getClients
+  pagination: none
+  params:
+    query: account_id
+- operation_id: vk_ads_get_demographics
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getDemographics
+  scope: ads
+  safety: read
+  summary: Returns demographics for ads or campaigns.
+  doc: https://dev.vk.com/method/ads.getDemographics
+  pagination: none
+  params:
+    query: account_id, ids_type, ids, period, date_from, date_to
+- operation_id: vk_ads_get_flood_stats
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getFloodStats
+  scope: ads
+  safety: read
+  summary: Returns information about current state of a counter - number of remaining runs of methods
+    and time to the next counter nulling in seconds.
+  doc: https://dev.vk.com/method/ads.getFloodStats
+  pagination: none
+  params:
+    query: account_id
+- operation_id: vk_ads_get_lookalike_requests
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getLookalikeRequests
+  scope: ads
+  safety: read
+  summary: 'Реклама (кабинет VK Ads): ads.getLookalikeRequests'
+  doc: https://dev.vk.com/method/ads.getLookalikeRequests
+  pagination: offset
+  params:
+    query: account_id, client_id, requests_ids, offset, limit, sort_by
+- operation_id: vk_ads_get_musicians
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getMusicians
+  scope: ads
+  safety: read
+  summary: 'Реклама (кабинет VK Ads): ads.getMusicians'
+  doc: https://dev.vk.com/method/ads.getMusicians
+  pagination: none
+  params:
+    query: artist_name
+- operation_id: vk_ads_get_musicians_by_ids
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getMusiciansByIds
+  scope: ads
+  safety: read
+  summary: 'Реклама (кабинет VK Ads): ads.getMusiciansByIds'
+  doc: https://dev.vk.com/method/ads.getMusiciansByIds
+  pagination: none
+  params:
+    query: ids
+- operation_id: vk_ads_get_office_users
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getOfficeUsers
+  scope: ads
+  safety: read
+  summary: Returns a list of managers and supervisors of advertising account.
+  doc: https://dev.vk.com/method/ads.getOfficeUsers
+  pagination: none
+  params:
+    query: account_id
+- operation_id: vk_ads_get_posts_reach
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getPostsReach
+  scope: ads
+  safety: read
+  summary: Returns detailed statistics of promoted posts reach from campaigns and ads.
+  doc: https://dev.vk.com/method/ads.getPostsReach
+  pagination: none
+  params:
+    query: account_id, ids_type, ids
+- operation_id: vk_ads_get_rejection_reason
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getRejectionReason
+  scope: ads
+  safety: read
+  summary: Returns a reason of ad rejection for pre-moderation.
+  doc: https://dev.vk.com/method/ads.getRejectionReason
+  pagination: none
+  params:
+    query: account_id, ad_id
+- operation_id: vk_ads_get_statistics
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getStatistics
+  scope: ads
+  safety: read
+  summary: Returns statistics of performance indicators for ads, campaigns, clients or the whole account.
+  doc: https://dev.vk.com/method/ads.getStatistics
+  pagination: none
+  params:
+    query: account_id, ids_type, ids, period, date_from, date_to, stats_fields
+- operation_id: vk_ads_get_suggestions
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getSuggestions
+  scope: ads
+  safety: read
+  summary: Returns a set of auto-suggestions for various targeting parameters.
+  doc: https://dev.vk.com/method/ads.getSuggestions
+  pagination: none
+  params:
+    query: section, ids, q, country, cities, lang
+- operation_id: vk_ads_get_target_groups
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getTargetGroups
+  scope: ads
+  safety: read
+  summary: Returns a list of target groups.
+  doc: https://dev.vk.com/method/ads.getTargetGroups
+  pagination: none
+  params:
+    query: account_id, client_id, extended
+- operation_id: vk_ads_get_target_pixels
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getTargetPixels
+  scope: ads
+  safety: read
+  summary: 'Реклама (кабинет VK Ads): ads.getTargetPixels'
+  doc: https://dev.vk.com/method/ads.getTargetPixels
+  pagination: none
+  params:
+    query: account_id, client_id
+- operation_id: vk_ads_get_targeting_stats
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getTargetingStats
+  scope: ads
+  safety: read
+  summary: Returns the size of targeting audience, and also recommended values for CPC and CPM.
+  doc: https://dev.vk.com/method/ads.getTargetingStats
+  pagination: none
+  params:
+    query: account_id, client_id, criteria, ad_id, ad_format, ad_platform, ad_platform_no_wall, ad_platform_no_ad_network,
+      publisher_platforms, link_url, link_domain, need_precise
+- operation_id: vk_ads_get_upload_u_r_l
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getUploadURL
+  scope: ads
+  safety: read
+  summary: Returns URL to upload an ad photo to.
+  doc: https://dev.vk.com/method/ads.getUploadURL
+  pagination: none
+  params:
+    query: ad_format, icon
+- operation_id: vk_ads_get_video_upload_u_r_l
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.getVideoUploadURL
+  scope: ads
+  safety: read
+  summary: Returns URL to upload an ad video to.
+  doc: https://dev.vk.com/method/ads.getVideoUploadURL
+  pagination: none
+- operation_id: vk_ads_import_target_contacts
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.importTargetContacts
+  scope: ads
+  safety: write
+  summary: Imports a list of advertiser's contacts to count VK registered users against the target group.
+  doc: https://dev.vk.com/method/ads.importTargetContacts
+  pagination: none
+  params:
+    query: account_id, client_id, target_group_id, contacts
+- operation_id: vk_ads_remove_office_users
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.removeOfficeUsers
+  scope: ads
+  safety: destructive
+  summary: Removes managers and/or supervisors from advertising account.
+  doc: https://dev.vk.com/method/ads.removeOfficeUsers
+  pagination: none
+  params:
+    query: account_id, ids
+- operation_id: vk_ads_remove_target_contacts
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.removeTargetContacts
+  scope: ads
+  safety: destructive
+  summary: 'Реклама (кабинет VK Ads): ads.removeTargetContacts'
+  doc: https://dev.vk.com/method/ads.removeTargetContacts
+  pagination: none
+  params:
+    query: account_id, client_id, target_group_id, contacts
+- operation_id: vk_ads_save_lookalike_request_result
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.saveLookalikeRequestResult
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.saveLookalikeRequestResult'
+  doc: https://dev.vk.com/method/ads.saveLookalikeRequestResult
+  pagination: none
+  params:
+    query: account_id, client_id, request_id, level
+- operation_id: vk_ads_share_target_group
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.shareTargetGroup
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.shareTargetGroup'
+  doc: https://dev.vk.com/method/ads.shareTargetGroup
+  pagination: none
+  params:
+    query: account_id, client_id, target_group_id, share_with_client_id
+- operation_id: vk_ads_update_ads
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateAds
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.updateAds. Edits ads.'
+  doc: https://dev.vk.com/method/ads.updateAds
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_update_campaigns
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateCampaigns
+  scope: ads
+  safety: write
+  summary: Edits advertising campaigns.
+  doc: https://dev.vk.com/method/ads.updateCampaigns
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_update_clients
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateClients
+  scope: ads
+  safety: write
+  summary: Edits clients of an advertising agency.
+  doc: https://dev.vk.com/method/ads.updateClients
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_update_office_users
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateOfficeUsers
+  scope: ads
+  safety: write
+  summary: Adds managers and/or supervisors to advertising account.
+  doc: https://dev.vk.com/method/ads.updateOfficeUsers
+  pagination: none
+  params:
+    query: account_id, data
+- operation_id: vk_ads_update_target_group
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateTargetGroup
+  scope: ads
+  safety: write
+  summary: Edits a retarget group.
+  doc: https://dev.vk.com/method/ads.updateTargetGroup
+  pagination: none
+  params:
+    query: account_id, client_id, target_group_id, name, domain, lifetime, target_pixel_id, target_pixel_rules
+- operation_id: vk_ads_update_target_pixel
+  section: ads
+  method: POST
+  host: api.vk.com
+  path: /method/ads.updateTargetPixel
+  scope: ads
+  safety: write
+  summary: 'Реклама (кабинет VK Ads): ads.updateTargetPixel'
+  doc: https://dev.vk.com/method/ads.updateTargetPixel
+  pagination: none
+  params:
+    query: account_id, client_id, target_pixel_id, name, domain, category_id
+- operation_id: vk_messages_add_chat_user
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.addChatUser
+  scope: messages
+  safety: write
+  summary: Adds a new user to a chat.
+  doc: https://dev.vk.com/method/messages.addChatUser
+  pagination: none
+  params:
+    query: chat_id, user_id, visible_messages_count
+- operation_id: vk_messages_add_chat_users
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.addChatUsers
+  scope: messages
+  safety: write
+  summary: Adds new users to a chat.
+  doc: https://dev.vk.com/method/messages.addChatUsers
+  pagination: none
+  params:
+    query: chat_id, visible_messages_count
+- operation_id: vk_messages_allow_messages_from_group
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.allowMessagesFromGroup
+  scope: messages
+  safety: write
+  summary: Allows sending messages from community to the current user.
+  doc: https://dev.vk.com/method/messages.allowMessagesFromGroup
+  pagination: none
+  params:
+    query: group_id, key
+- operation_id: vk_messages_create_chat
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.createChat
+  scope: messages
+  safety: write
+  summary: Creates a chat with several participants.
+  doc: https://dev.vk.com/method/messages.createChat
+  pagination: none
+  params:
+    query: user_ids, title, group_id
+- operation_id: vk_messages_delete
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.delete
+  scope: messages
+  safety: destructive
+  summary: Deletes one or more messages.
+  doc: https://dev.vk.com/method/messages.delete
+  pagination: none
+  params:
+    query: message_ids, spam, reason, group_id, delete_for_all, peer_id, cmids
+- operation_id: vk_messages_delete_chat_photo
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.deleteChatPhoto
+  scope: messages
+  safety: destructive
+  summary: Deletes a chat's cover picture.
+  doc: https://dev.vk.com/method/messages.deleteChatPhoto
+  pagination: none
+  params:
+    query: chat_id, group_id
+- operation_id: vk_messages_delete_conversation
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.deleteConversation
+  scope: messages
+  safety: destructive
+  summary: Deletes all private messages in a conversation.
+  doc: https://dev.vk.com/method/messages.deleteConversation
+  pagination: none
+  params:
+    query: user_id, peer_id, group_id
+- operation_id: vk_messages_delete_reaction
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.deleteReaction
+  scope: messages
+  safety: destructive
+  summary: Delete message reaction
+  doc: https://dev.vk.com/method/messages.deleteReaction
+  pagination: none
+  params:
+    query: peer_id, cmid
+- operation_id: vk_messages_deny_messages_from_group
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.denyMessagesFromGroup
+  scope: messages
+  safety: write
+  summary: Denies sending message from community to the current user.
+  doc: https://dev.vk.com/method/messages.denyMessagesFromGroup
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_messages_edit
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.edit
+  scope: messages
+  safety: write
+  summary: Edits the message.
+  doc: https://dev.vk.com/method/messages.edit
+  pagination: none
+  params:
+    query: peer_id, message, lat, long, attachment, keep_forward_messages, keep_snippets, group_id, dont_parse_links,
+      disable_mentions, message_id, cmid
+- operation_id: vk_messages_edit_chat
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.editChat
+  scope: messages
+  safety: write
+  summary: Edits the title of a chat.
+  doc: https://dev.vk.com/method/messages.editChat
+  pagination: none
+  params:
+    query: chat_id, title
+- operation_id: vk_messages_get_by_conversation_message_id
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getByConversationMessageId
+  scope: messages
+  safety: read
+  summary: Returns messages by their IDs within the conversation.
+  doc: https://dev.vk.com/method/messages.getByConversationMessageId
+  pagination: none
+  params:
+    query: peer_id, conversation_message_ids, extended, fields, group_id
+- operation_id: vk_messages_get_by_id
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getById
+  scope: messages
+  safety: read
+  summary: Returns messages by their IDs.
+  doc: https://dev.vk.com/method/messages.getById
+  pagination: none
+  params:
+    query: message_ids, preview_length, extended, fields, group_id, cmids, peer_id
+- operation_id: vk_messages_get_chat
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getChat
+  scope: messages
+  safety: read
+  summary: Returns information about a chat.
+  doc: https://dev.vk.com/method/messages.getChat
+  pagination: none
+  params:
+    query: chat_id, chat_ids, fields, name_case
+- operation_id: vk_messages_get_chat_preview
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getChatPreview
+  scope: messages
+  safety: read
+  summary: 'Диалоги и сообщения: messages.getChatPreview'
+  doc: https://dev.vk.com/method/messages.getChatPreview
+  pagination: none
+  params:
+    query: peer_id, link, fields
+- operation_id: vk_messages_get_conversation_members
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getConversationMembers
+  scope: messages
+  safety: read
+  summary: Returns a list of IDs of users participating in a chat.
+  doc: https://dev.vk.com/method/messages.getConversationMembers
+  pagination: offset
+  params:
+    query: peer_id, offset, count, extended, fields, group_id, member_ids
+- operation_id: vk_messages_get_conversations
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getConversations
+  scope: messages
+  safety: read
+  summary: Returns a list of the current user's conversations.
+  doc: https://dev.vk.com/method/messages.getConversations
+  pagination: offset
+  params:
+    query: offset, count, filter, extended, start_message_id, fields, group_id
+- operation_id: vk_messages_get_conversations_by_id
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getConversationsById
+  scope: messages
+  safety: read
+  summary: Returns conversations by their IDs
+  doc: https://dev.vk.com/method/messages.getConversationsById
+  pagination: none
+  params:
+    query: peer_ids, extended, fields, group_id
+- operation_id: vk_messages_get_history
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getHistory
+  scope: messages
+  safety: read
+  summary: Returns message history for the specified user or group chat.
+  doc: https://dev.vk.com/method/messages.getHistory
+  pagination: offset
+  params:
+    query: offset, count, user_id, peer_id, start_message_id, rev, extended, fields, group_id
+- operation_id: vk_messages_get_history_attachments
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getHistoryAttachments
+  scope: messages
+  safety: read
+  summary: Returns media files from the dialog or group chat.
+  doc: https://dev.vk.com/method/messages.getHistoryAttachments
+  pagination: offset
+  params:
+    query: attachment_types, group_id, peer_id, cmid, attachment_position, offset, count, extended, fields,
+      max_forwards_level, message_video, media_type
+- operation_id: vk_messages_get_important_messages
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getImportantMessages
+  scope: messages
+  safety: read
+  summary: Returns a list of user's important messages.
+  doc: https://dev.vk.com/method/messages.getImportantMessages
+  pagination: offset
+  params:
+    query: count, offset, start_message_id, preview_length, fields, extended, group_id
+- operation_id: vk_messages_get_intent_users
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getIntentUsers
+  scope: messages
+  safety: read
+  summary: 'Диалоги и сообщения: messages.getIntentUsers'
+  doc: https://dev.vk.com/method/messages.getIntentUsers
+  pagination: offset
+  params:
+    query: intent, subscribe_id, offset, count, extended, name_case, fields
+- operation_id: vk_messages_get_invite_link
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getInviteLink
+  scope: messages
+  safety: read
+  summary: 'Диалоги и сообщения: messages.getInviteLink'
+  doc: https://dev.vk.com/method/messages.getInviteLink
+  pagination: none
+  params:
+    query: peer_id, reset, group_id
+- operation_id: vk_messages_get_last_activity
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getLastActivity
+  scope: messages
+  safety: read
+  summary: Returns a user's current status and date of last activity.
+  doc: https://dev.vk.com/method/messages.getLastActivity
+  pagination: none
+  params:
+    query: user_id
+- operation_id: vk_messages_get_long_poll_history
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getLongPollHistory
+  scope: messages
+  safety: read
+  summary: Returns updates in user's private messages.
+  doc: https://dev.vk.com/method/messages.getLongPollHistory
+  pagination: none
+  params:
+    query: ts, pts, preview_length, onlines, fields, events_limit, msgs_limit, max_msg_id, group_id, lp_version,
+      last_n, credentials
+- operation_id: vk_messages_get_long_poll_server
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getLongPollServer
+  scope: messages
+  safety: read
+  summary: Returns data required for connection to a Long Poll server.
+  doc: https://dev.vk.com/method/messages.getLongPollServer
+  pagination: none
+  params:
+    query: need_pts, group_id, lp_version
+- operation_id: vk_messages_get_messages_reactions
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getMessagesReactions
+  scope: messages
+  safety: read
+  summary: Get reaction counters for message
+  doc: https://dev.vk.com/method/messages.getMessagesReactions
+  pagination: none
+  params:
+    query: peer_id, cmids
+- operation_id: vk_messages_get_reacted_peers
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getReactedPeers
+  scope: messages
+  safety: read
+  summary: Get reacted users and counters for message
+  doc: https://dev.vk.com/method/messages.getReactedPeers
+  pagination: none
+  params:
+    query: peer_id, cmid, reaction_id
+- operation_id: vk_messages_get_reactions_assets
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.getReactionsAssets
+  scope: messages
+  safety: read
+  summary: Get assets to display message reactions
+  doc: https://dev.vk.com/method/messages.getReactionsAssets
+  pagination: none
+  params:
+    query: client_version
+- operation_id: vk_messages_is_messages_from_group_allowed
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.isMessagesFromGroupAllowed
+  scope: messages
+  safety: read
+  summary: Returns information whether sending messages from the community to current user is allowed.
+  doc: https://dev.vk.com/method/messages.isMessagesFromGroupAllowed
+  pagination: none
+  params:
+    query: group_id, user_id
+- operation_id: vk_messages_join_chat_by_invite_link
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.joinChatByInviteLink
+  scope: messages
+  safety: write
+  summary: 'Диалоги и сообщения: messages.joinChatByInviteLink'
+  doc: https://dev.vk.com/method/messages.joinChatByInviteLink
+  pagination: none
+  params:
+    query: link
+- operation_id: vk_messages_mark_as_answered_conversation
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.markAsAnsweredConversation
+  scope: messages
+  safety: write
+  summary: Marks and unmarks conversations as unanswered.
+  doc: https://dev.vk.com/method/messages.markAsAnsweredConversation
+  pagination: none
+  params:
+    query: peer_id, answered, group_id
+- operation_id: vk_messages_mark_as_important
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.markAsImportant
+  scope: messages
+  safety: write
+  summary: Marks and unmarks messages as important (starred).
+  doc: https://dev.vk.com/method/messages.markAsImportant
+  pagination: none
+  params:
+    query: message_ids, important
+- operation_id: vk_messages_mark_as_important_conversation
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.markAsImportantConversation
+  scope: messages
+  safety: write
+  summary: Marks and unmarks conversations as important.
+  doc: https://dev.vk.com/method/messages.markAsImportantConversation
+  pagination: none
+  params:
+    query: peer_id, important, group_id
+- operation_id: vk_messages_mark_as_read
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.markAsRead
+  scope: messages
+  safety: write
+  summary: Marks messages as read.
+  doc: https://dev.vk.com/method/messages.markAsRead
+  pagination: none
+  params:
+    query: message_ids, peer_id, start_message_id, group_id, mark_conversation_as_read, up_to_cmid
+- operation_id: vk_messages_mark_reactions_as_read
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.markReactionsAsRead
+  scope: messages
+  safety: write
+  summary: Mark messages reactions as read
+  doc: https://dev.vk.com/method/messages.markReactionsAsRead
+  pagination: none
+  params:
+    query: peer_id, cmids
+- operation_id: vk_messages_mute_chat_mentions
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.muteChatMentions
+  scope: messages
+  safety: write
+  summary: 'Диалоги и сообщения: messages.muteChatMentions'
+  doc: https://dev.vk.com/method/messages.muteChatMentions
+  pagination: none
+  params:
+    query: peer_id, mention_status
+- operation_id: vk_messages_pin
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.pin
+  scope: messages
+  safety: write
+  summary: 'Диалоги и сообщения: messages.pin. Pin a message.'
+  doc: https://dev.vk.com/method/messages.pin
+  pagination: none
+  params:
+    query: peer_id, message_id, cmid
+- operation_id: vk_messages_remove_chat_user
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.removeChatUser
+  scope: messages
+  safety: destructive
+  summary: Allows the current user to leave a chat or, if the current user started the chat, allows the
+    user to remove another user from the chat.
+  doc: https://dev.vk.com/method/messages.removeChatUser
+  pagination: none
+  params:
+    query: chat_id, user_id, member_id
+- operation_id: vk_messages_restore
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.restore
+  scope: messages
+  safety: write
+  summary: Restores a deleted message.
+  doc: https://dev.vk.com/method/messages.restore
+  pagination: none
+  params:
+    query: message_id, group_id, cmid, peer_id
+- operation_id: vk_messages_search
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.search
+  scope: messages
+  safety: read
+  summary: Returns a list of the current user's private messages that match search criteria.
+  doc: https://dev.vk.com/method/messages.search
+  pagination: offset
+  params:
+    query: q, peer_id, date, preview_length, offset, count, extended, fields, group_id
+- operation_id: vk_messages_search_conversations
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.searchConversations
+  scope: messages
+  safety: read
+  summary: Returns a list of the current user's conversations that match search criteria.
+  doc: https://dev.vk.com/method/messages.searchConversations
+  pagination: none
+  params:
+    query: q, count, extended, fields, group_id
+- operation_id: vk_messages_send
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.send
+  scope: messages
+  safety: write
+  summary: Sends a message.
+  doc: https://dev.vk.com/method/messages.send
+  pagination: none
+  params:
+    query: user_id, random_id, peer_id, peer_ids, domain, chat_id, message, lat, long, attachment, reply_to,
+      forward_messages
+- operation_id: vk_messages_send_message_event_answer
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.sendMessageEventAnswer
+  scope: messages
+  safety: write
+  summary: 'Диалоги и сообщения: messages.sendMessageEventAnswer'
+  doc: https://dev.vk.com/method/messages.sendMessageEventAnswer
+  pagination: none
+  params:
+    query: event_id, user_id, peer_id, event_data
+- operation_id: vk_messages_send_reaction
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.sendReaction
+  scope: messages
+  safety: write
+  summary: Send message reaction
+  doc: https://dev.vk.com/method/messages.sendReaction
+  pagination: none
+  params:
+    query: peer_id, cmid, reaction_id
+- operation_id: vk_messages_set_activity
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.setActivity
+  scope: messages
+  safety: write
+  summary: Changes the status of a user as typing in a conversation.
+  doc: https://dev.vk.com/method/messages.setActivity
+  pagination: none
+  params:
+    query: user_id, type, peer_id, group_id
+- operation_id: vk_messages_set_chat_photo
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.setChatPhoto
+  scope: messages
+  safety: write
+  summary: Sets a previously-uploaded picture as the cover picture of a chat.
+  doc: https://dev.vk.com/method/messages.setChatPhoto
+  pagination: none
+  params:
+    query: file
+- operation_id: vk_messages_unpin
+  section: messages
+  method: POST
+  host: api.vk.com
+  path: /method/messages.unpin
+  scope: messages
+  safety: write
+  summary: 'Диалоги и сообщения: messages.unpin'
+  doc: https://dev.vk.com/method/messages.unpin
+  pagination: none
+  params:
+    query: peer_id, group_id
+- operation_id: vk_stats_get
+  section: stats
+  method: POST
+  host: api.vk.com
+  path: /method/stats.get
+  scope: stats
+  safety: read
+  summary: Returns statistics of a community or an application.
+  doc: https://dev.vk.com/method/stats.get
+  pagination: none
+  params:
+    query: group_id, app_id, timestamp_from, timestamp_to, interval, intervals_count, filters, stats_groups,
+      extended
+- operation_id: vk_stats_get_post_reach
+  section: stats
+  method: POST
+  host: api.vk.com
+  path: /method/stats.getPostReach
+  scope: stats
+  safety: read
+  summary: Returns stats for a wall post.
+  doc: https://dev.vk.com/method/stats.getPostReach
+  pagination: none
+  params:
+    query: owner_id, post_ids
+- operation_id: vk_stats_track_visitor
+  section: stats
+  method: POST
+  host: api.vk.com
+  path: /method/stats.trackVisitor
+  scope: stats
+  safety: write
+  summary: 'Статистика сообщества: stats.trackVisitor'
+  doc: https://dev.vk.com/method/stats.trackVisitor
+  pagination: none
+  params:
+    query: type
+- operation_id: vk_wall_check_copyright_link
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.checkCopyrightLink
+  scope: wall
+  safety: read
+  summary: 'Записи на стене: wall.checkCopyrightLink'
+  doc: https://dev.vk.com/method/wall.checkCopyrightLink
+  pagination: none
+  params:
+    query: link
+- operation_id: vk_wall_close_comments
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.closeComments
+  scope: wall
+  safety: write
+  summary: 'Записи на стене: wall.closeComments'
+  doc: https://dev.vk.com/method/wall.closeComments
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_wall_create_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.createComment
+  scope: wall
+  safety: write
+  summary: Adds a comment to a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.createComment
+  pagination: none
+  params:
+    query: owner_id, post_id, from_group, message, reply_to_comment, attachments, sticker_id, guid
+- operation_id: vk_wall_delete
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.delete
+  scope: wall
+  safety: destructive
+  summary: Deletes a post from a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.delete
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_wall_delete_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.deleteComment
+  scope: wall
+  safety: destructive
+  summary: Deletes a comment on a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.deleteComment
+  pagination: none
+  params:
+    query: owner_id, post_id, comment_id
+- operation_id: vk_wall_edit
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.edit
+  scope: wall
+  safety: write
+  summary: Edits a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.edit
+  pagination: none
+  params:
+    query: owner_id, post_id, friends_only, message, attachments, services, signed, publish_date, lat,
+      long, place_id, mark_as_ads
+- operation_id: vk_wall_edit_ads_stealth
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.editAdsStealth
+  scope: wall
+  safety: write
+  summary: Allows to edit hidden post.
+  doc: https://dev.vk.com/method/wall.editAdsStealth
+  pagination: none
+  params:
+    query: owner_id, post_id, message, attachments, signed, lat, long, place_id, link_button, link_title,
+      link_image, link_video
+- operation_id: vk_wall_edit_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.editComment
+  scope: wall
+  safety: write
+  summary: Edits a comment on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.editComment
+  pagination: none
+  params:
+    query: owner_id, post_id, comment_id, message, attachments
+- operation_id: vk_wall_get
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.get
+  scope: wall
+  safety: read
+  summary: Returns a list of posts on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.get
+  pagination: offset
+  params:
+    query: domain, offset, count, filter, extended, fields
+- operation_id: vk_wall_get_by_id
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.getById
+  scope: wall
+  safety: read
+  summary: Returns a list of posts from user or community walls by their IDs.
+  doc: https://dev.vk.com/method/wall.getById
+  pagination: none
+  params:
+    query: posts, extended, copy_history_depth, fields
+- operation_id: vk_wall_get_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.getComment
+  scope: wall
+  safety: read
+  summary: Returns a comment on a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.getComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, extended, fields
+- operation_id: vk_wall_get_comments
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.getComments
+  scope: wall
+  safety: read
+  summary: Returns a list of comments on a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.getComments
+  pagination: offset
+  params:
+    query: owner_id, post_id, need_likes, start_comment_id, offset, count, sort, preview_length, extended,
+      fields, comment_id, thread_items_count
+- operation_id: vk_wall_get_reposts
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.getReposts
+  scope: wall
+  safety: read
+  summary: Returns information about reposts of a post on user wall or community wall.
+  doc: https://dev.vk.com/method/wall.getReposts
+  pagination: offset
+  params:
+    query: owner_id, post_id, offset, count
+- operation_id: vk_wall_open_comments
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.openComments
+  scope: wall
+  safety: write
+  summary: 'Записи на стене: wall.openComments'
+  doc: https://dev.vk.com/method/wall.openComments
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_wall_parse_attached_link
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.parseAttachedLink
+  scope: wall
+  safety: write
+  summary: 'Записи на стене: wall.parseAttachedLink'
+  doc: https://dev.vk.com/method/wall.parseAttachedLink
+  pagination: none
+  params:
+    query: links, extended, fields, name_case
+- operation_id: vk_wall_pin
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.pin
+  scope: wall
+  safety: write
+  summary: Pins the post on wall.
+  doc: https://dev.vk.com/method/wall.pin
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_wall_post
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.post
+  scope: wall
+  safety: write
+  summary: Adds a new post on a user wall or community wall. Can also be used to publish suggested or
+    scheduled posts.
+  doc: https://dev.vk.com/method/wall.post
+  pagination: none
+  params:
+    query: owner_id, friends_only, from_group, message, attachments, services, signed, publish_date, lat,
+      long, place_id, post_id
+- operation_id: vk_wall_post_ads_stealth
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.postAdsStealth
+  scope: wall
+  safety: write
+  summary: Allows to create hidden post which will not be shown on the community's wall and can be used
+    for creating an ad with type "Community post".
+  doc: https://dev.vk.com/method/wall.postAdsStealth
+  pagination: none
+  params:
+    query: owner_id, message, attachments, signed, lat, long, place_id, guid, link_button, link_title,
+      link_image, link_video
+- operation_id: vk_wall_report_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.reportComment
+  scope: wall
+  safety: write
+  summary: Reports (submits a complaint about) a comment on a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.reportComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, reason
+- operation_id: vk_wall_report_post
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.reportPost
+  scope: wall
+  safety: write
+  summary: Reports (submits a complaint about) a post on a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.reportPost
+  pagination: none
+  params:
+    query: owner_id, post_id, reason
+- operation_id: vk_wall_repost
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.repost
+  scope: wall
+  safety: write
+  summary: Reposts (copies) an object to a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.repost
+  pagination: none
+  params:
+    query: object, message, group_id, mark_as_ads, mute_notifications
+- operation_id: vk_wall_restore
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.restore
+  scope: wall
+  safety: write
+  summary: Restores a post deleted from a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.restore
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_wall_restore_comment
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.restoreComment
+  scope: wall
+  safety: write
+  summary: Restores a comment deleted from a user wall or community wall.
+  doc: https://dev.vk.com/method/wall.restoreComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_wall_search
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.search
+  scope: wall
+  safety: read
+  summary: Allows to search posts on user or community walls.
+  doc: https://dev.vk.com/method/wall.search
+  pagination: offset
+  params:
+    query: domain, query, owners_only, count, offset, extended, fields
+- operation_id: vk_wall_unpin
+  section: wall
+  method: POST
+  host: api.vk.com
+  path: /method/wall.unpin
+  scope: wall
+  safety: write
+  summary: Unpins the post on wall.
+  doc: https://dev.vk.com/method/wall.unpin
+  pagination: none
+  params:
+    query: owner_id, post_id
+- operation_id: vk_photos_confirm_tag
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.confirmTag
+  scope: photos
+  safety: write
+  summary: Confirms a tag on a photo.
+  doc: https://dev.vk.com/method/photos.confirmTag
+  pagination: none
+  params:
+    query: owner_id, photo_id, tag_id
+- operation_id: vk_photos_copy
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.copy
+  scope: photos
+  safety: write
+  summary: Allows to copy a photo to the "Saved photos" album
+  doc: https://dev.vk.com/method/photos.copy
+  pagination: none
+  params:
+    query: owner_id, photo_id, access_key
+- operation_id: vk_photos_create_album
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.createAlbum
+  scope: photos
+  safety: write
+  summary: Creates an empty photo album.
+  doc: https://dev.vk.com/method/photos.createAlbum
+  pagination: none
+  params:
+    query: title, group_id, description, privacy_view, privacy_comment, upload_by_admins_only, comments_disabled
+- operation_id: vk_photos_create_comment
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.createComment
+  scope: photos
+  safety: write
+  summary: Adds a new comment on the photo.
+  doc: https://dev.vk.com/method/photos.createComment
+  pagination: none
+  params:
+    query: owner_id, photo_id, message, attachments, from_group, reply_to_comment, sticker_id, access_key,
+      guid
+- operation_id: vk_photos_delete
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.delete
+  scope: photos
+  safety: destructive
+  summary: Deletes a photo.
+  doc: https://dev.vk.com/method/photos.delete
+  pagination: none
+  params:
+    query: owner_id, photo_id, photos
+- operation_id: vk_photos_delete_album
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.deleteAlbum
+  scope: photos
+  safety: destructive
+  summary: Deletes a photo album belonging to the current user.
+  doc: https://dev.vk.com/method/photos.deleteAlbum
+  pagination: none
+  params:
+    query: album_id, group_id
+- operation_id: vk_photos_delete_comment
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.deleteComment
+  scope: photos
+  safety: destructive
+  summary: Deletes a comment on the photo.
+  doc: https://dev.vk.com/method/photos.deleteComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_photos_edit
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.edit
+  scope: photos
+  safety: write
+  summary: Edits the caption of a photo.
+  doc: https://dev.vk.com/method/photos.edit
+  pagination: none
+  params:
+    query: owner_id, photo_id, caption, latitude, longitude, place_str, foursquare_id, delete_place
+- operation_id: vk_photos_edit_album
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.editAlbum
+  scope: photos
+  safety: write
+  summary: Edits information about a photo album.
+  doc: https://dev.vk.com/method/photos.editAlbum
+  pagination: none
+  params:
+    query: album_id, title, description, owner_id, privacy_view, privacy_comment, upload_by_admins_only,
+      comments_disabled
+- operation_id: vk_photos_edit_comment
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.editComment
+  scope: photos
+  safety: write
+  summary: Edits a comment on a photo.
+  doc: https://dev.vk.com/method/photos.editComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, message, attachments
+- operation_id: vk_photos_get
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.get
+  scope: photos
+  safety: read
+  summary: Returns a list of a user's or community's photos.
+  doc: https://dev.vk.com/method/photos.get
+  pagination: offset
+  params:
+    query: owner_id, album_id, photo_ids, rev, extended, feed_type, feed, photo_sizes, offset, count
+- operation_id: vk_photos_get_albums
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getAlbums
+  scope: photos
+  safety: read
+  summary: Returns a list of a user's or community's photo albums.
+  doc: https://dev.vk.com/method/photos.getAlbums
+  pagination: offset
+  params:
+    query: owner_id, album_ids, offset, count, need_system, need_covers, photo_sizes
+- operation_id: vk_photos_get_albums_count
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getAlbumsCount
+  scope: photos
+  safety: read
+  summary: Returns the number of photo albums belonging to a user or community.
+  doc: https://dev.vk.com/method/photos.getAlbumsCount
+  pagination: none
+  params:
+    query: user_id, group_id, need_system
+- operation_id: vk_photos_get_all
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getAll
+  scope: photos
+  safety: read
+  summary: Returns a list of photos belonging to a user or community, in reverse chronological order.
+  doc: https://dev.vk.com/method/photos.getAll
+  pagination: offset
+  params:
+    query: owner_id, extended, offset, count, photo_sizes, no_service_albums, need_hidden, skip_hidden
+- operation_id: vk_photos_get_all_comments
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getAllComments
+  scope: photos
+  safety: read
+  summary: Returns a list of comments on a specific photo album or all albums of the user sorted in reverse
+    chronological order.
+  doc: https://dev.vk.com/method/photos.getAllComments
+  pagination: offset
+  params:
+    query: owner_id, album_id, need_likes, offset, count
+- operation_id: vk_photos_get_by_id
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getById
+  scope: photos
+  safety: read
+  summary: Returns information about photos by their IDs.
+  doc: https://dev.vk.com/method/photos.getById
+  pagination: none
+  params:
+    query: photos, extended, photo_sizes
+- operation_id: vk_photos_get_chat_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getChatUploadServer
+  scope: photos
+  safety: read
+  summary: Returns an upload link for chat cover pictures.
+  doc: https://dev.vk.com/method/photos.getChatUploadServer
+  pagination: none
+  params:
+    query: chat_id, crop_x, crop_y, crop_width
+- operation_id: vk_photos_get_comments
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getComments
+  scope: photos
+  safety: read
+  summary: Returns a list of comments on a photo.
+  doc: https://dev.vk.com/method/photos.getComments
+  pagination: offset
+  params:
+    query: owner_id, photo_id, need_likes, start_comment_id, offset, count, sort, access_key, extended,
+      fields
+- operation_id: vk_photos_get_market_album_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getMarketAlbumUploadServer
+  scope: photos
+  safety: read
+  summary: Returns the server address for market album photo upload.
+  doc: https://dev.vk.com/method/photos.getMarketAlbumUploadServer
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_photos_get_messages_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getMessagesUploadServer
+  scope: photos
+  safety: read
+  summary: Returns the server address for photo upload in a private message for a user.
+  doc: https://dev.vk.com/method/photos.getMessagesUploadServer
+  pagination: none
+  params:
+    query: peer_id
+- operation_id: vk_photos_get_new_tags
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getNewTags
+  scope: photos
+  safety: read
+  summary: Returns a list of photos with tags that have not been viewed.
+  doc: https://dev.vk.com/method/photos.getNewTags
+  pagination: offset
+  params:
+    query: offset, count
+- operation_id: vk_photos_get_owner_cover_photo_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getOwnerCoverPhotoUploadServer
+  scope: photos
+  safety: read
+  summary: Returns the server address for owner cover upload.
+  doc: https://dev.vk.com/method/photos.getOwnerCoverPhotoUploadServer
+  pagination: none
+  params:
+    query: group_id, crop_x, crop_y, crop_x2, crop_y2, is_video_cover
+- operation_id: vk_photos_get_owner_photo_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getOwnerPhotoUploadServer
+  scope: photos
+  safety: read
+  summary: Returns an upload server address for a profile or community photo.
+  doc: https://dev.vk.com/method/photos.getOwnerPhotoUploadServer
+  pagination: none
+  params:
+    query: owner_id
+- operation_id: vk_photos_get_tags
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getTags
+  scope: photos
+  safety: read
+  summary: Returns a list of tags on a photo.
+  doc: https://dev.vk.com/method/photos.getTags
+  pagination: none
+  params:
+    query: owner_id, photo_id, access_key
+- operation_id: vk_photos_get_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getUploadServer
+  scope: photos
+  safety: read
+  summary: Returns the server address for photo upload.
+  doc: https://dev.vk.com/method/photos.getUploadServer
+  pagination: none
+  params:
+    query: album_id, group_id
+- operation_id: vk_photos_get_user_photos
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getUserPhotos
+  scope: photos
+  safety: read
+  summary: Returns a list of photos in which a user is tagged.
+  doc: https://dev.vk.com/method/photos.getUserPhotos
+  pagination: offset
+  params:
+    query: user_id, offset, count, extended, sort
+- operation_id: vk_photos_get_wall_upload_server
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.getWallUploadServer
+  scope: photos
+  safety: read
+  summary: Returns the server address for photo upload onto a user's wall.
+  doc: https://dev.vk.com/method/photos.getWallUploadServer
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_photos_make_cover
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.makeCover
+  scope: photos
+  safety: write
+  summary: Makes a photo into an album cover.
+  doc: https://dev.vk.com/method/photos.makeCover
+  pagination: none
+  params:
+    query: owner_id, photo_id, album_id
+- operation_id: vk_photos_move
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.move
+  scope: photos
+  safety: write
+  summary: Moves a photo from one album to another.
+  doc: https://dev.vk.com/method/photos.move
+  pagination: none
+  params:
+    query: owner_id, target_album_id, photo_ids
+- operation_id: vk_photos_put_tag
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.putTag
+  scope: photos
+  safety: write
+  summary: Adds a tag on the photo.
+  doc: https://dev.vk.com/method/photos.putTag
+  pagination: none
+  params:
+    query: owner_id, photo_id, user_id, x, y, x2, y2
+- operation_id: vk_photos_remove_tag
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.removeTag
+  scope: photos
+  safety: destructive
+  summary: Removes a tag from a photo.
+  doc: https://dev.vk.com/method/photos.removeTag
+  pagination: none
+  params:
+    query: owner_id, photo_id, tag_id
+- operation_id: vk_photos_reorder_albums
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.reorderAlbums
+  scope: photos
+  safety: write
+  summary: Reorders the album in the list of user albums.
+  doc: https://dev.vk.com/method/photos.reorderAlbums
+  pagination: none
+  params:
+    query: owner_id, album_id, before, after
+- operation_id: vk_photos_reorder_photos
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.reorderPhotos
+  scope: photos
+  safety: write
+  summary: Reorders the photo in the list of photos of the user album.
+  doc: https://dev.vk.com/method/photos.reorderPhotos
+  pagination: none
+  params:
+    query: owner_id, photo_id, before, after
+- operation_id: vk_photos_report
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.report
+  scope: photos
+  safety: write
+  summary: Reports (submits a complaint about) a photo.
+  doc: https://dev.vk.com/method/photos.report
+  pagination: none
+  params:
+    query: owner_id, photo_id, reason
+- operation_id: vk_photos_report_comment
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.reportComment
+  scope: photos
+  safety: write
+  summary: Reports (submits a complaint about) a comment on a photo.
+  doc: https://dev.vk.com/method/photos.reportComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, reason
+- operation_id: vk_photos_restore
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.restore
+  scope: photos
+  safety: write
+  summary: Restores a deleted photo.
+  doc: https://dev.vk.com/method/photos.restore
+  pagination: none
+  params:
+    query: owner_id, photo_id
+- operation_id: vk_photos_restore_comment
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.restoreComment
+  scope: photos
+  safety: write
+  summary: Restores a deleted comment on a photo.
+  doc: https://dev.vk.com/method/photos.restoreComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_photos_save
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.save
+  scope: photos
+  safety: write
+  summary: Saves photos after successful uploading.
+  doc: https://dev.vk.com/method/photos.save
+  pagination: none
+  params:
+    query: album_id, group_id, server, photos_list, hash, latitude, longitude, caption
+- operation_id: vk_photos_save_market_album_photo
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.saveMarketAlbumPhoto
+  scope: photos
+  safety: write
+  summary: Saves market album photos after successful uploading.
+  doc: https://dev.vk.com/method/photos.saveMarketAlbumPhoto
+  pagination: none
+  params:
+    query: group_id, photo, server, hash
+- operation_id: vk_photos_save_messages_photo
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.saveMessagesPhoto
+  scope: photos
+  safety: write
+  summary: Saves a photo after being successfully uploaded. URL obtained with [vk.com/dev/photos.getMessagesUploadServer|photos.getMessagesUploadServer]
+    method.
+  doc: https://dev.vk.com/method/photos.saveMessagesPhoto
+  pagination: none
+  params:
+    query: photo, server, hash
+- operation_id: vk_photos_save_owner_cover_photo
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.saveOwnerCoverPhoto
+  scope: photos
+  safety: write
+  summary: Saves cover photo after successful uploading.
+  doc: https://dev.vk.com/method/photos.saveOwnerCoverPhoto
+  pagination: none
+  params:
+    query: crop_x, crop_height, crop_y, crop_width, response_json, hash, photo, is_video_cover
+- operation_id: vk_photos_save_owner_photo
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.saveOwnerPhoto
+  scope: photos
+  safety: write
+  summary: Saves a profile or community photo. Upload URL can be got with the [vk.com/dev/photos.getOwnerPhotoUploadServer|photos.getOwnerPhotoUploadServer]
+    method.
+  doc: https://dev.vk.com/method/photos.saveOwnerPhoto
+  pagination: none
+  params:
+    query: server, hash, photo
+- operation_id: vk_photos_save_wall_photo
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.saveWallPhoto
+  scope: photos
+  safety: write
+  summary: Saves a photo to a user's or community's wall after being uploaded.
+  doc: https://dev.vk.com/method/photos.saveWallPhoto
+  pagination: none
+  params:
+    query: user_id, group_id, photo, server, hash, latitude, longitude, caption
+- operation_id: vk_photos_search
+  section: photos
+  method: POST
+  host: api.vk.com
+  path: /method/photos.search
+  scope: photos
+  safety: read
+  summary: Returns a list of photos.
+  doc: https://dev.vk.com/method/photos.search
+  pagination: offset
+  params:
+    query: q, lat, long, start_time, end_time, sort, offset, count, radius
+- operation_id: vk_video_add
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.add
+  scope: video
+  safety: write
+  summary: Adds a video to a user or community page.
+  doc: https://dev.vk.com/method/video.add
+  pagination: none
+  params:
+    query: target_id, video_id, owner_id
+- operation_id: vk_video_add_album
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.addAlbum
+  scope: video
+  safety: write
+  summary: Creates an empty album for videos.
+  doc: https://dev.vk.com/method/video.addAlbum
+  pagination: none
+  params:
+    query: group_id, title, privacy
+- operation_id: vk_video_add_to_album
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.addToAlbum
+  scope: video
+  safety: write
+  summary: 'Видео: video.addToAlbum'
+  doc: https://dev.vk.com/method/video.addToAlbum
+  pagination: none
+  params:
+    query: target_id, album_id, album_ids, owner_id, video_id
+- operation_id: vk_video_create_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.createComment
+  scope: video
+  safety: write
+  summary: Adds a new comment on a video.
+  doc: https://dev.vk.com/method/video.createComment
+  pagination: none
+  params:
+    query: owner_id, video_id, message, attachments, from_group, reply_to_comment, sticker_id, guid, track_code
+- operation_id: vk_video_delete
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.delete
+  scope: video
+  safety: destructive
+  summary: Deletes a video from a user or community page.
+  doc: https://dev.vk.com/method/video.delete
+  pagination: none
+  params:
+    query: video_id, owner_id, target_id
+- operation_id: vk_video_delete_album
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.deleteAlbum
+  scope: video
+  safety: destructive
+  summary: Deletes a video album.
+  doc: https://dev.vk.com/method/video.deleteAlbum
+  pagination: none
+  params:
+    query: group_id, album_id, owner_id
+- operation_id: vk_video_delete_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.deleteComment
+  scope: video
+  safety: destructive
+  summary: Deletes a comment on a video.
+  doc: https://dev.vk.com/method/video.deleteComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_video_delete_thread
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.deleteThread
+  scope: video
+  safety: destructive
+  summary: Deletes a thread on a video.
+  doc: https://dev.vk.com/method/video.deleteThread
+  pagination: none
+  params:
+    query: owner_id, thread_id
+- operation_id: vk_video_edit
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.edit
+  scope: video
+  safety: write
+  summary: Edits information about a video on a user or community page.
+  doc: https://dev.vk.com/method/video.edit
+  pagination: none
+  params:
+    query: owner_id, video_id, name, desc, privacy_view, privacy_comment, no_comments, repeat, ord_info
+- operation_id: vk_video_edit_album
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.editAlbum
+  scope: video
+  safety: write
+  summary: Edits the title of a video album.
+  doc: https://dev.vk.com/method/video.editAlbum
+  pagination: none
+  params:
+    query: group_id, album_id, title, privacy, owner_id
+- operation_id: vk_video_edit_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.editComment
+  scope: video
+  safety: write
+  summary: Edits the text of a comment on a video.
+  doc: https://dev.vk.com/method/video.editComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, message, attachments
+- operation_id: vk_video_get
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.get
+  scope: video
+  safety: read
+  summary: Returns detailed information about videos.
+  doc: https://dev.vk.com/method/video.get
+  pagination: offset
+  params:
+    query: owner_id, videos, album_id, count, offset, extended, fields, sort_album
+- operation_id: vk_video_get_album_by_id
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getAlbumById
+  scope: video
+  safety: read
+  summary: Returns video album info
+  doc: https://dev.vk.com/method/video.getAlbumById
+  pagination: none
+  params:
+    query: owner_id, album_id
+- operation_id: vk_video_get_albums
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getAlbums
+  scope: video
+  safety: read
+  summary: Returns a list of video albums owned by a user or community.
+  doc: https://dev.vk.com/method/video.getAlbums
+  pagination: offset
+  params:
+    query: owner_id, offset, count, extended, need_system
+- operation_id: vk_video_get_albums_by_video
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getAlbumsByVideo
+  scope: video
+  safety: read
+  summary: 'Видео: video.getAlbumsByVideo'
+  doc: https://dev.vk.com/method/video.getAlbumsByVideo
+  pagination: none
+  params:
+    query: target_id, owner_id, video_id, extended
+- operation_id: vk_video_get_comments
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getComments
+  scope: video
+  safety: read
+  summary: Returns a list of comments on a video.
+  doc: https://dev.vk.com/method/video.getComments
+  pagination: offset
+  params:
+    query: owner_id, video_id, need_likes, start_comment_id, offset, count, sort, extended, fields, comment_id,
+      thread_items_count
+- operation_id: vk_video_get_long_poll_server
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getLongPollServer
+  scope: video
+  safety: read
+  summary: 'Видео: video.getLongPollServer'
+  doc: https://dev.vk.com/method/video.getLongPollServer
+  pagination: none
+  params:
+    query: owner_id, video_id
+- operation_id: vk_video_get_oembed
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getOembed
+  scope: video
+  safety: read
+  summary: Returns oEmbed player to video
+  doc: https://dev.vk.com/method/video.getOembed
+  pagination: none
+  params:
+    query: url, maxwidth, maxheight
+- operation_id: vk_video_get_thumb_upload_url
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.getThumbUploadUrl
+  scope: video
+  safety: read
+  summary: 'Видео: video.getThumbUploadUrl'
+  doc: https://dev.vk.com/method/video.getThumbUploadUrl
+  pagination: none
+  params:
+    query: owner_id
+- operation_id: vk_video_live_get_categories
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.liveGetCategories
+  scope: video
+  safety: write
+  summary: 'Видео: video.liveGetCategories'
+  doc: https://dev.vk.com/method/video.liveGetCategories
+  pagination: none
+- operation_id: vk_video_remove_from_album
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.removeFromAlbum
+  scope: video
+  safety: destructive
+  summary: 'Видео: video.removeFromAlbum'
+  doc: https://dev.vk.com/method/video.removeFromAlbum
+  pagination: none
+  params:
+    query: target_id, album_id, album_ids, owner_id, video_id
+- operation_id: vk_video_reorder_albums
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.reorderAlbums
+  scope: video
+  safety: write
+  summary: Reorders the album in the list of user video albums.
+  doc: https://dev.vk.com/method/video.reorderAlbums
+  pagination: none
+  params:
+    query: owner_id, album_id, before, after
+- operation_id: vk_video_reorder_videos
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.reorderVideos
+  scope: video
+  safety: write
+  summary: Reorders the video in the video album.
+  doc: https://dev.vk.com/method/video.reorderVideos
+  pagination: none
+  params:
+    query: target_id, album_id, owner_id, video_id, before_owner_id, before_video_id, after_owner_id,
+      after_video_id
+- operation_id: vk_video_report
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.report
+  scope: video
+  safety: write
+  summary: Reports (submits a complaint about) a video.
+  doc: https://dev.vk.com/method/video.report
+  pagination: none
+  params:
+    query: owner_id, video_id, reason, comment, search_query
+- operation_id: vk_video_report_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.reportComment
+  scope: video
+  safety: write
+  summary: Reports (submits a complaint about) a comment on a video.
+  doc: https://dev.vk.com/method/video.reportComment
+  pagination: none
+  params:
+    query: owner_id, comment_id, reason
+- operation_id: vk_video_restore
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.restore
+  scope: video
+  safety: write
+  summary: Restores a previously deleted video.
+  doc: https://dev.vk.com/method/video.restore
+  pagination: none
+  params:
+    query: video_id, owner_id
+- operation_id: vk_video_restore_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.restoreComment
+  scope: video
+  safety: write
+  summary: Restores a previously deleted comment on a video.
+  doc: https://dev.vk.com/method/video.restoreComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_video_restore_thread
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.restoreThread
+  scope: video
+  safety: write
+  summary: Restores a deleted thread on a video.
+  doc: https://dev.vk.com/method/video.restoreThread
+  pagination: none
+  params:
+    query: owner_id, thread_id
+- operation_id: vk_video_save
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.save
+  scope: video
+  safety: write
+  summary: Returns a server address (required for upload) and video data.
+  doc: https://dev.vk.com/method/video.save
+  pagination: none
+  params:
+    query: name, description, is_private, wallpost, link, group_id, album_id, privacy_view, privacy_comment,
+      no_comments, repeat, compression
+- operation_id: vk_video_save_uploaded_thumb
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.saveUploadedThumb
+  scope: video
+  safety: write
+  summary: 'Видео: video.saveUploadedThumb'
+  doc: https://dev.vk.com/method/video.saveUploadedThumb
+  pagination: none
+  params:
+    query: owner_id, thumb_json, thumb_size, random_tag, video_id, set_thumb
+- operation_id: vk_video_search
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.search
+  scope: video
+  safety: read
+  summary: Returns a list of videos under the set search criterion.
+  doc: https://dev.vk.com/method/video.search
+  pagination: offset
+  params:
+    query: q, sort, hd, adult, live, filters, search_own, offset, longer, shorter, count, extended
+- operation_id: vk_video_start_streaming
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.startStreaming
+  scope: video
+  safety: write
+  summary: 'Видео: video.startStreaming'
+  doc: https://dev.vk.com/method/video.startStreaming
+  pagination: none
+  params:
+    query: video_id, name, description, wallpost, group_id, privacy_view, privacy_comment, no_comments,
+      category_id, publish
+- operation_id: vk_video_stop_streaming
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.stopStreaming
+  scope: video
+  safety: write
+  summary: 'Видео: video.stopStreaming'
+  doc: https://dev.vk.com/method/video.stopStreaming
+  pagination: none
+  params:
+    query: group_id, video_id
+- operation_id: vk_video_unpin_comment
+  section: video
+  method: POST
+  host: api.vk.com
+  path: /method/video.unpinComment
+  scope: video
+  safety: write
+  summary: Unpin comment of a video.
+  doc: https://dev.vk.com/method/video.unpinComment
+  pagination: none
+  params:
+    query: owner_id, comment_id
+- operation_id: vk_docs_add
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.add
+  scope: docs
+  safety: write
+  summary: Copies a document to a user's or community's document list.
+  doc: https://dev.vk.com/method/docs.add
+  pagination: none
+  params:
+    query: owner_id, doc_id, access_key
+- operation_id: vk_docs_delete
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.delete
+  scope: docs
+  safety: destructive
+  summary: Deletes a user or community document.
+  doc: https://dev.vk.com/method/docs.delete
+  pagination: none
+  params:
+    query: owner_id, doc_id
+- operation_id: vk_docs_edit
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.edit
+  scope: docs
+  safety: write
+  summary: Edits a document.
+  doc: https://dev.vk.com/method/docs.edit
+  pagination: none
+  params:
+    query: owner_id, doc_id, title, tags
+- operation_id: vk_docs_get
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.get
+  scope: docs
+  safety: read
+  summary: Returns detailed information about user or community documents.
+  doc: https://dev.vk.com/method/docs.get
+  pagination: offset
+  params:
+    query: count, offset, type, owner_id, return_tags
+- operation_id: vk_docs_get_by_id
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.getById
+  scope: docs
+  safety: read
+  summary: Returns information about documents by their IDs.
+  doc: https://dev.vk.com/method/docs.getById
+  pagination: none
+  params:
+    query: docs, return_tags
+- operation_id: vk_docs_get_messages_upload_server
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.getMessagesUploadServer
+  scope: docs
+  safety: read
+  summary: Returns the server address for document upload.
+  doc: https://dev.vk.com/method/docs.getMessagesUploadServer
+  pagination: none
+  params:
+    query: type, peer_id
+- operation_id: vk_docs_get_types
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.getTypes
+  scope: docs
+  safety: read
+  summary: Returns documents types available for current user.
+  doc: https://dev.vk.com/method/docs.getTypes
+  pagination: none
+  params:
+    query: owner_id
+- operation_id: vk_docs_get_upload_server
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.getUploadServer
+  scope: docs
+  safety: read
+  summary: Returns the server address for document upload.
+  doc: https://dev.vk.com/method/docs.getUploadServer
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_docs_get_wall_upload_server
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.getWallUploadServer
+  scope: docs
+  safety: read
+  summary: Returns the server address for document upload onto a user's or community's wall.
+  doc: https://dev.vk.com/method/docs.getWallUploadServer
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_docs_restore
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.restore
+  scope: docs
+  safety: write
+  summary: 'Документы: docs.restore'
+  doc: https://dev.vk.com/method/docs.restore
+  pagination: none
+  params:
+    query: owner_id, doc_id
+- operation_id: vk_docs_save
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.save
+  scope: docs
+  safety: write
+  summary: Saves a document after [vk.com/dev/upload_files_2|uploading it to a server].
+  doc: https://dev.vk.com/method/docs.save
+  pagination: none
+  params:
+    query: file, title, tags, return_tags
+- operation_id: vk_docs_search
+  section: docs
+  method: POST
+  host: api.vk.com
+  path: /method/docs.search
+  scope: docs
+  safety: read
+  summary: Returns a list of documents matching the search criteria.
+  doc: https://dev.vk.com/method/docs.search
+  pagination: offset
+  params:
+    query: q, search_own, count, offset, return_tags
+- operation_id: vk_board_add_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.addTopic
+  scope: board
+  safety: write
+  summary: Creates a new topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.addTopic
+  pagination: none
+  params:
+    query: group_id, title, text, from_group, attachments
+- operation_id: vk_board_close_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.closeTopic
+  scope: board
+  safety: write
+  summary: Closes a topic on a community's discussion board so that comments cannot be posted.
+  doc: https://dev.vk.com/method/board.closeTopic
+  pagination: none
+  params:
+    query: group_id, topic_id
+- operation_id: vk_board_create_comment
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.createComment
+  scope: board
+  safety: write
+  summary: Adds a comment on a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.createComment
+  pagination: none
+  params:
+    query: group_id, topic_id, message, attachments, from_group, sticker_id, guid
+- operation_id: vk_board_delete_comment
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.deleteComment
+  scope: board
+  safety: destructive
+  summary: Deletes a comment on a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.deleteComment
+  pagination: none
+  params:
+    query: group_id, topic_id, comment_id
+- operation_id: vk_board_delete_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.deleteTopic
+  scope: board
+  safety: destructive
+  summary: Deletes a topic from a community's discussion board.
+  doc: https://dev.vk.com/method/board.deleteTopic
+  pagination: none
+  params:
+    query: group_id, topic_id
+- operation_id: vk_board_edit_comment
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.editComment
+  scope: board
+  safety: write
+  summary: Edits a comment on a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.editComment
+  pagination: none
+  params:
+    query: group_id, topic_id, comment_id, message, attachments
+- operation_id: vk_board_edit_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.editTopic
+  scope: board
+  safety: write
+  summary: Edits the title of a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.editTopic
+  pagination: none
+  params:
+    query: group_id, topic_id, title
+- operation_id: vk_board_fix_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.fixTopic
+  scope: board
+  safety: write
+  summary: Pins a topic (fixes its place) to the top of a community's discussion board.
+  doc: https://dev.vk.com/method/board.fixTopic
+  pagination: none
+  params:
+    query: group_id, topic_id
+- operation_id: vk_board_get_comments
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.getComments
+  scope: board
+  safety: read
+  summary: Returns a list of comments on a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.getComments
+  pagination: offset
+  params:
+    query: group_id, topic_id, need_likes, start_comment_id, offset, count, extended, sort
+- operation_id: vk_board_get_topics
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.getTopics
+  scope: board
+  safety: read
+  summary: Returns a list of topics on a community's discussion board.
+  doc: https://dev.vk.com/method/board.getTopics
+  pagination: offset
+  params:
+    query: group_id, topic_ids, order, offset, count, extended, preview, preview_length
+- operation_id: vk_board_open_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.openTopic
+  scope: board
+  safety: write
+  summary: Re-opens a previously closed topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.openTopic
+  pagination: none
+  params:
+    query: group_id, topic_id
+- operation_id: vk_board_restore_comment
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.restoreComment
+  scope: board
+  safety: write
+  summary: Restores a comment deleted from a topic on a community's discussion board.
+  doc: https://dev.vk.com/method/board.restoreComment
+  pagination: none
+  params:
+    query: group_id, topic_id, comment_id
+- operation_id: vk_board_unfix_topic
+  section: board
+  method: POST
+  host: api.vk.com
+  path: /method/board.unfixTopic
+  scope: board
+  safety: write
+  summary: Unpins a pinned topic from the top of a community's discussion board.
+  doc: https://dev.vk.com/method/board.unfixTopic
+  pagination: none
+  params:
+    query: group_id, topic_id
+- operation_id: vk_lead_forms_create
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.create
+  scope: leadForms
+  safety: write
+  summary: 'Лид-формы: leadForms.create'
+  doc: https://dev.vk.com/method/leadForms.create
+  pagination: none
+  params:
+    query: group_id, name, title, description, questions, policy_link_url, photo, confirmation, site_link_url,
+      active, once_per_user, pixel_code
+- operation_id: vk_lead_forms_delete
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.delete
+  scope: leadForms
+  safety: destructive
+  summary: 'Лид-формы: leadForms.delete'
+  doc: https://dev.vk.com/method/leadForms.delete
+  pagination: none
+  params:
+    query: group_id, form_id
+- operation_id: vk_lead_forms_get
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.get
+  scope: leadForms
+  safety: read
+  summary: 'Лид-формы: leadForms.get'
+  doc: https://dev.vk.com/method/leadForms.get
+  pagination: none
+  params:
+    query: group_id, form_id
+- operation_id: vk_lead_forms_get_leads
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.getLeads
+  scope: leadForms
+  safety: read
+  summary: 'Лид-формы: leadForms.getLeads'
+  doc: https://dev.vk.com/method/leadForms.getLeads
+  pagination: none
+  params:
+    query: group_id, form_id, limit, next_page_token
+- operation_id: vk_lead_forms_get_upload_u_r_l
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.getUploadURL
+  scope: leadForms
+  safety: read
+  summary: 'Лид-формы: leadForms.getUploadURL'
+  doc: https://dev.vk.com/method/leadForms.getUploadURL
+  pagination: none
+- operation_id: vk_lead_forms_list
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.list
+  scope: leadForms
+  safety: write
+  summary: 'Лид-формы: leadForms.list'
+  doc: https://dev.vk.com/method/leadForms.list
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_lead_forms_update
+  section: leadForms
+  method: POST
+  host: api.vk.com
+  path: /method/leadForms.update
+  scope: leadForms
+  safety: write
+  summary: 'Лид-формы: leadForms.update'
+  doc: https://dev.vk.com/method/leadForms.update
+  pagination: none
+  params:
+    query: group_id, form_id, name, title, description, questions, policy_link_url, photo, confirmation,
+      site_link_url, active, once_per_user
+- operation_id: vk_orders_cancel_subscription
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.cancelSubscription
+  scope: orders
+  safety: write
+  summary: 'Заказы (VK Pay): orders.cancelSubscription'
+  doc: https://dev.vk.com/method/orders.cancelSubscription
+  pagination: none
+  params:
+    query: user_id, subscription_id, pending_cancel
+- operation_id: vk_orders_change_state
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.changeState
+  scope: orders
+  safety: write
+  summary: Changes order status.
+  doc: https://dev.vk.com/method/orders.changeState
+  pagination: none
+  params:
+    query: order_id, action, app_order_id, test_mode
+- operation_id: vk_orders_get
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.get
+  scope: orders
+  safety: read
+  summary: Returns a list of orders.
+  doc: https://dev.vk.com/method/orders.get
+  pagination: offset
+  params:
+    query: offset, count, test_mode
+- operation_id: vk_orders_get_amount
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.getAmount
+  scope: orders
+  safety: read
+  summary: 'Заказы (VK Pay): orders.getAmount'
+  doc: https://dev.vk.com/method/orders.getAmount
+  pagination: none
+  params:
+    query: user_id, votes
+- operation_id: vk_orders_get_by_id
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.getById
+  scope: orders
+  safety: read
+  summary: Returns information about orders by their IDs.
+  doc: https://dev.vk.com/method/orders.getById
+  pagination: none
+  params:
+    query: order_id, order_ids, test_mode
+- operation_id: vk_orders_get_user_subscription_by_id
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.getUserSubscriptionById
+  scope: orders
+  safety: read
+  summary: 'Заказы (VK Pay): orders.getUserSubscriptionById'
+  doc: https://dev.vk.com/method/orders.getUserSubscriptionById
+  pagination: none
+  params:
+    query: user_id, subscription_id
+- operation_id: vk_orders_get_user_subscriptions
+  section: orders
+  method: POST
+  host: api.vk.com
+  path: /method/orders.getUserSubscriptions
+  scope: orders
+  safety: read
+  summary: 'Заказы (VK Pay): orders.getUserSubscriptions'
+  doc: https://dev.vk.com/method/orders.getUserSubscriptions
+  pagination: none
+  params:
+    query: user_id
+- operation_id: vk_storage_get
+  section: storage
+  method: POST
+  host: api.vk.com
+  path: /method/storage.get
+  scope: storage
+  safety: read
+  summary: Returns a value of variable with the name set by key parameter.
+  doc: https://dev.vk.com/method/storage.get
+  pagination: none
+  params:
+    query: key, keys, user_id
+- operation_id: vk_storage_get_keys
+  section: storage
+  method: POST
+  host: api.vk.com
+  path: /method/storage.getKeys
+  scope: storage
+  safety: read
+  summary: Returns the names of all variables.
+  doc: https://dev.vk.com/method/storage.getKeys
+  pagination: offset
+  params:
+    query: user_id, offset, count
+- operation_id: vk_storage_set
+  section: storage
+  method: POST
+  host: api.vk.com
+  path: /method/storage.set
+  scope: storage
+  safety: write
+  summary: Saves a value of variable with the name set by 'key' parameter.
+  doc: https://dev.vk.com/method/storage.set
+  pagination: none
+  params:
+    query: key, value, user_id
+- operation_id: vk_utils_check_link
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.checkLink
+  scope: utils
+  safety: read
+  summary: Checks whether a link is blocked in VK.
+  doc: https://dev.vk.com/method/utils.checkLink
+  pagination: none
+  params:
+    query: url
+- operation_id: vk_utils_delete_from_last_shortened
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.deleteFromLastShortened
+  scope: utils
+  safety: destructive
+  summary: Deletes shortened link from user's list.
+  doc: https://dev.vk.com/method/utils.deleteFromLastShortened
+  pagination: none
+  params:
+    query: key
+- operation_id: vk_utils_get_last_shortened_links
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.getLastShortenedLinks
+  scope: utils
+  safety: read
+  summary: Returns a list of user's shortened links.
+  doc: https://dev.vk.com/method/utils.getLastShortenedLinks
+  pagination: offset
+  params:
+    query: count, offset
+- operation_id: vk_utils_get_link_stats
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.getLinkStats
+  scope: utils
+  safety: read
+  summary: Returns stats data for shortened link.
+  doc: https://dev.vk.com/method/utils.getLinkStats
+  pagination: none
+  params:
+    query: key, source, access_key, interval, intervals_count, extended
+- operation_id: vk_utils_get_server_time
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.getServerTime
+  scope: utils
+  safety: read
+  summary: Returns the current time of the VK server.
+  doc: https://dev.vk.com/method/utils.getServerTime
+  pagination: none
+- operation_id: vk_utils_get_short_link
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.getShortLink
+  scope: utils
+  safety: read
+  summary: Allows to receive a link shortened via vk.cc.
+  doc: https://dev.vk.com/method/utils.getShortLink
+  pagination: none
+  params:
+    query: url, private
+- operation_id: vk_utils_resolve_screen_name
+  section: utils
+  method: POST
+  host: api.vk.com
+  path: /method/utils.resolveScreenName
+  scope: utils
+  safety: read
+  summary: Detects a type of object (e.g., user, community, application) and its ID by screen name.
+  doc: https://dev.vk.com/method/utils.resolveScreenName
+  pagination: none
+  params:
+    query: screen_name
+- operation_id: vk_users_get
+  section: users
+  method: POST
+  host: api.vk.com
+  path: /method/users.get
+  scope: users
+  safety: read
+  summary: Returns detailed information on users.
+  doc: https://dev.vk.com/method/users.get
+  pagination: none
+  params:
+    query: user_ids, fields, name_case, from_group_id
+- operation_id: vk_users_get_followers
+  section: users
+  method: POST
+  host: api.vk.com
+  path: /method/users.getFollowers
+  scope: users
+  safety: read
+  summary: Returns a list of IDs of followers of the user in question, sorted by date added, most recent
+    first.
+  doc: https://dev.vk.com/method/users.getFollowers
+  pagination: offset
+  params:
+    query: user_id, offset, count, fields, name_case
+- operation_id: vk_users_get_subscriptions
+  section: users
+  method: POST
+  host: api.vk.com
+  path: /method/users.getSubscriptions
+  scope: users
+  safety: read
+  summary: Returns a list of IDs of users and communities followed by the user.
+  doc: https://dev.vk.com/method/users.getSubscriptions
+  pagination: offset
+  params:
+    query: user_id, extended, offset, count, fields
+- operation_id: vk_users_report
+  section: users
+  method: POST
+  host: api.vk.com
+  path: /method/users.report
+  scope: users
+  safety: write
+  summary: Reports (submits a complain about) a user.
+  doc: https://dev.vk.com/method/users.report
+  pagination: none
+  params:
+    query: user_id, type, comment
+- operation_id: vk_users_search
+  section: users
+  method: POST
+  host: api.vk.com
+  path: /method/users.search
+  scope: users
+  safety: read
+  summary: Returns a list of users matching the search criteria.
+  doc: https://dev.vk.com/method/users.search
+  pagination: offset
+  params:
+    query: q, sort, offset, count, fields, city, city_id, country, country_id, hometown, university_country,
+      university
+- operation_id: vk_donut_get_friends
+  section: donut
+  method: POST
+  host: api.vk.com
+  path: /method/donut.getFriends
+  scope: donut
+  safety: read
+  summary: 'VK Donut (подписки): donut.getFriends'
+  doc: https://dev.vk.com/method/donut.getFriends
+  pagination: offset
+  params:
+    query: owner_id, offset, count, fields
+- operation_id: vk_donut_get_subscription
+  section: donut
+  method: POST
+  host: api.vk.com
+  path: /method/donut.getSubscription
+  scope: donut
+  safety: read
+  summary: 'VK Donut (подписки): donut.getSubscription'
+  doc: https://dev.vk.com/method/donut.getSubscription
+  pagination: none
+  params:
+    query: owner_id
+- operation_id: vk_donut_get_subscriptions
+  section: donut
+  method: POST
+  host: api.vk.com
+  path: /method/donut.getSubscriptions
+  scope: donut
+  safety: read
+  summary: Returns a list of user's VK Donut subscriptions.
+  doc: https://dev.vk.com/method/donut.getSubscriptions
+  pagination: offset
+  params:
+    query: fields, offset, count
+- operation_id: vk_donut_is_don
+  section: donut
+  method: POST
+  host: api.vk.com
+  path: /method/donut.isDon
+  scope: donut
+  safety: read
+  summary: 'VK Donut (подписки): donut.isDon'
+  doc: https://dev.vk.com/method/donut.isDon
+  pagination: none
+  params:
+    query: owner_id
+- operation_id: vk_pretty_cards_create
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.create
+  scope: prettyCards
+  safety: write
+  summary: 'Карточки в записях: prettyCards.create'
+  doc: https://dev.vk.com/method/prettyCards.create
+  pagination: none
+  params:
+    query: owner_id, photo, title, link, price, price_old, button
+- operation_id: vk_pretty_cards_delete
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.delete
+  scope: prettyCards
+  safety: destructive
+  summary: 'Карточки в записях: prettyCards.delete'
+  doc: https://dev.vk.com/method/prettyCards.delete
+  pagination: none
+  params:
+    query: owner_id, card_id
+- operation_id: vk_pretty_cards_edit
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.edit
+  scope: prettyCards
+  safety: write
+  summary: 'Карточки в записях: prettyCards.edit'
+  doc: https://dev.vk.com/method/prettyCards.edit
+  pagination: none
+  params:
+    query: owner_id, card_id, photo, title, link, price, price_old, button
+- operation_id: vk_pretty_cards_get
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.get
+  scope: prettyCards
+  safety: read
+  summary: 'Карточки в записях: prettyCards.get'
+  doc: https://dev.vk.com/method/prettyCards.get
+  pagination: offset
+  params:
+    query: owner_id, offset, count
+- operation_id: vk_pretty_cards_get_by_id
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.getById
+  scope: prettyCards
+  safety: read
+  summary: 'Карточки в записях: prettyCards.getById'
+  doc: https://dev.vk.com/method/prettyCards.getById
+  pagination: none
+  params:
+    query: owner_id, card_ids
+- operation_id: vk_pretty_cards_get_upload_u_r_l
+  section: prettyCards
+  method: POST
+  host: api.vk.com
+  path: /method/prettyCards.getUploadURL
+  scope: prettyCards
+  safety: read
+  summary: 'Карточки в записях: prettyCards.getUploadURL'
+  doc: https://dev.vk.com/method/prettyCards.getUploadURL
+  pagination: none
+- operation_id: vk_podcasts_search_podcast
+  section: podcasts
+  method: POST
+  host: api.vk.com
+  path: /method/podcasts.searchPodcast
+  scope: podcasts
+  safety: read
+  summary: 'Подкасты: podcasts.searchPodcast'
+  doc: https://dev.vk.com/method/podcasts.searchPodcast
+  pagination: offset
+  params:
+    query: search_string, offset, count
+- operation_id: vk_notifications_get
+  section: notifications
+  method: POST
+  host: api.vk.com
+  path: /method/notifications.get
+  scope: notifications
+  safety: read
+  summary: Returns a list of notifications about other users' feedback to the current user's wall posts.
+  doc: https://dev.vk.com/method/notifications.get
+  pagination: none
+  params:
+    query: count, start_from, filters, start_time, end_time
+- operation_id: vk_notifications_mark_as_viewed
+  section: notifications
+  method: POST
+  host: api.vk.com
+  path: /method/notifications.markAsViewed
+  scope: notifications
+  safety: write
+  summary: Resets the counter of new notifications about other users' feedback to the current user's wall
+    posts.
+  doc: https://dev.vk.com/method/notifications.markAsViewed
+  pagination: none
+- operation_id: vk_notifications_send_message
+  section: notifications
+  method: POST
+  host: api.vk.com
+  path: /method/notifications.sendMessage
+  scope: notifications
+  safety: write
+  summary: 'Уведомления: notifications.sendMessage'
+  doc: https://dev.vk.com/method/notifications.sendMessage
+  pagination: none
+  params:
+    query: user_ids, message, fragment, group_id, random_id, sending_mode
+- operation_id: vk_pages_clear_cache
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.clearCache
+  scope: pages
+  safety: write
+  summary: Allows to clear the cache of particular 'external' pages which may be attached to VK posts.
+  doc: https://dev.vk.com/method/pages.clearCache
+  pagination: none
+  params:
+    query: url
+- operation_id: vk_pages_get
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.get
+  scope: pages
+  safety: read
+  summary: Returns information about a wiki page.
+  doc: https://dev.vk.com/method/pages.get
+  pagination: none
+  params:
+    query: owner_id, page_id, global, site_preview, title, need_source, need_html
+- operation_id: vk_pages_get_history
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.getHistory
+  scope: pages
+  safety: read
+  summary: Returns a list of all previous versions of a wiki page.
+  doc: https://dev.vk.com/method/pages.getHistory
+  pagination: none
+  params:
+    query: page_id, group_id, user_id
+- operation_id: vk_pages_get_titles
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.getTitles
+  scope: pages
+  safety: read
+  summary: Returns a list of wiki pages in a group.
+  doc: https://dev.vk.com/method/pages.getTitles
+  pagination: none
+  params:
+    query: group_id
+- operation_id: vk_pages_get_version
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.getVersion
+  scope: pages
+  safety: read
+  summary: Returns the text of one of the previous versions of a wiki page.
+  doc: https://dev.vk.com/method/pages.getVersion
+  pagination: none
+  params:
+    query: version_id, group_id, user_id, need_html
+- operation_id: vk_pages_parse_wiki
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.parseWiki
+  scope: pages
+  safety: write
+  summary: Returns HTML representation of the wiki markup.
+  doc: https://dev.vk.com/method/pages.parseWiki
+  pagination: none
+  params:
+    query: text, group_id
+- operation_id: vk_pages_save
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.save
+  scope: pages
+  safety: write
+  summary: Saves the text of a wiki page.
+  doc: https://dev.vk.com/method/pages.save
+  pagination: none
+  params:
+    query: text, page_id, group_id, user_id, title
+- operation_id: vk_pages_save_access
+  section: pages
+  method: POST
+  host: api.vk.com
+  path: /method/pages.saveAccess
+  scope: pages
+  safety: write
+  summary: Saves modified read and edit access settings for a wiki page.
+  doc: https://dev.vk.com/method/pages.saveAccess
+  pagination: none
+  params:
+    query: page_id, group_id, user_id, view, edit
