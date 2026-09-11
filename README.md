@@ -14,6 +14,12 @@ VK API для ИИ-ассистентов: товары магазина соо�
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-0098FF?logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=vk&config=%7B%22command%22%3A%20%22uvx%22%2C%20%22args%22%3A%20%5B%22vk-mcp-ru%22%5D%2C%20%22env%22%3A%20%7B%22VK_TOKEN%22%3A%20%22%24%7Binput%3Avk_token%7D%22%7D%7D&inputs=%5B%7B%22id%22%3A%20%22vk_token%22%2C%20%22type%22%3A%20%22promptString%22%2C%20%22description%22%3A%20%22%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%20VK%20%D0%B8%D0%BB%D0%B8%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0%20%D1%81%20%D0%BD%D1%83%D0%B6%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D0%BC%D0%B8.%22%2C%20%22password%22%3A%20true%7D%5D)
 [![Install in Cursor](https://img.shields.io/badge/Cursor-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-000000?logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=vk&config=eyJjb21tYW5kIjogInV2eCIsICJhcmdzIjogWyJ2ay1tY3AtcnUiXSwgImVudiI6IHsiVktfVE9LRU4iOiAiIn19)
 
+<p align="center">
+  <a href="https://business-mcp-ru.aifrontier.tech/">
+    <img src="assets/social-preview.png" alt="vk-mcp-ru: VK API в ИИ-ассистенте. 373 метода, поиск метода словами, гейт безопасности перед записью" width="760">
+  </a>
+</p>
+
 Каталог собран из первоисточника (официальная схема `VKCOM/vk-api-schema`) и лежит в репозитории как
 `vk_mcp/endpoints.yaml`: **373 метода**, из них 159 на чтение,
 173 на запись и 41 необратимых. Сервер исполняет ровно этот файл,
