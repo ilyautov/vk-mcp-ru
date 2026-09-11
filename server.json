@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.ilyautov/vk-mcp-ru",
   "title": "VK API MCP (RU) — товары, сообщества, реклама",
-  "description": "VK API для ИИ-ассистентов: товары магазина сообщества, посты, рекламные кампании и статистика, диалоги с клиентами, лид-формы. Каталог из официальной схемы, у каждого метода класс доступа.",
-  "version": "0.1.0",
+  "description": "VK API в ИИ-ассистенте: товары, сообщества, реклама, диалоги, статистика",
+  "version": "0.1.1",
   "repository": {
     "url": "https://github.com/ilyautov/vk-mcp-ru",
     "source": "github"
@@ -13,7 +13,7 @@
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "vk-mcp-ru",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
