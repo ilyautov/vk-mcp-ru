@@ -1,0 +1,102 @@
+# Сгенерировано split.py из sections.json. Руками не править.
+entities:
+  - key: groups
+    title_ru: Сообщества
+    title_en: Groups
+    match: [groups]
+    synonyms: [сообщества, сообщество, паблик, группа, groups]
+  - key: messages
+    title_ru: Диалоги
+    title_en: Messages
+    match: [messages]
+    synonyms: [диалоги, сообщения, переписка, чат, messages]
+  - key: ads
+    title_ru: Реклама
+    title_en: Ads
+    match: [ads]
+    synonyms: [реклама, объявления, ads]
+  - key: market
+    title_ru: Товары и магазин
+    title_en: Market
+    match: [market]
+    synonyms: [товары, магазин, market]
+  - key: photos
+    title_ru: Фотографии
+    title_en: Photos
+    match: [photos]
+    synonyms: [фотографии, photos]
+  - key: video
+    title_ru: Видео
+    title_en: Video
+    match: [video]
+    synonyms: [видео, video]
+  - key: wall
+    title_ru: Записи на стене
+    title_en: Wall
+    match: [wall]
+    synonyms: [записи, стене, стена, посты, wall]
+  - key: board
+    title_ru: Обсуждения
+    title_en: Board
+    match: [board]
+    synonyms: [обсуждения, board]
+  - key: docs
+    title_ru: Документы
+    title_en: Docs
+    match: [docs]
+    synonyms: [документы, docs]
+  - key: pages
+    title_ru: Вики-страницы
+    title_en: Pages
+    match: [pages]
+    synonyms: [вики-страницы, pages]
+  - key: leadForms
+    title_ru: Лид-формы
+    title_en: Leadforms
+    match: [leadForms]
+    synonyms: [лид-формы, leadforms]
+  - key: orders
+    title_ru: Заказы
+    title_en: Orders
+    match: [orders]
+    synonyms: [заказы, orders]
+  - key: utils
+    title_ru: Утилиты
+    title_en: Utils
+    match: [utils]
+    synonyms: [утилиты, utils]
+  - key: prettyCards
+    title_ru: Карточки в записях
+    title_en: Prettycards
+    match: [prettyCards]
+    synonyms: [карточки, записях, prettycards]
+  - key: users
+    title_ru: Пользователи
+    title_en: Users
+    match: [users]
+    synonyms: [пользователи, users]
+  - key: donut
+    title_ru: VK Donut
+    title_en: Donut
+    match: [donut]
+    synonyms: [donut]
+  - key: stats
+    title_ru: Статистика
+    title_en: Stats
+    match: [stats]
+    synonyms: [статистика, охваты, stats]
+  - key: storage
+    title_ru: Хранилище приложения
+    title_en: Storage
+    match: [storage]
+    synonyms: [хранилище, приложения, storage]
+  - key: notifications
+    title_ru: Уведомления
+    title_en: Notifications
+    match: [notifications]
+    synonyms: [уведомления, notifications]
+  - key: podcasts
+    title_ru: Подкасты
+    title_en: Podcasts
+    match: [podcasts]
+    synonyms: [подкасты, podcasts]

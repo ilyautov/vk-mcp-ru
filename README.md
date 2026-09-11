@@ -78,11 +78,25 @@ dev.vk.com → приложение → сервисный ключ доступ
 
 ## Как это выглядит в чате
 
+Вы: посты на стене сообщества
+
 ```
-vk_search_methods("...")   поиск метода словами, а не по имени эндпоинта
-vk_describe_method(...)    параметры, пагинация, класс доступа
-vk_call_method(...)        вызов; запись спрашивает подтверждение
+vk_search_methods("посты на стене сообщества")
+  vk_wall_get        POST /method/wall.get      чтение
+  vk_wall_search     POST /method/wall.search   чтение
+  vk_wall_get_by_id  POST /method/wall.getById  чтение
+
+vk_describe_method("vk_wall_get")
+  Returns a list of posts on a user wall or community wall.
+  POST api.vk.com/method/wall.get
+  параметры: domain, offset, count, filter, extended, fields
+  класс доступа: чтение
+
+vk_call_method("vk_wall_get", {"domain": "...", "offset": "..."})
 ```
+
+Три инструмента вместо 373 функций: агент ищет метод словами,
+читает его карточку и вызывает. Запись и необратимое спрашивают подтверждение.
 
 Что обычно просят:
 
