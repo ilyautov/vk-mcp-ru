@@ -1,6 +1,6 @@
 [project]
 name = "vk-mcp-ru"
-version = "0.2.0"
+version = "0.2.1"
 description = "VK API для ИИ-ассистентов: товары магазина сообщества, посты, рекламные кампании и статистика, диалоги с клиентами, лид-формы"
 keywords = ["mcp", "model-context-protocol", "vk", "vkontakte", "vk-api", "smm", "ads", "russia", "claude"]
 readme = "README.md"
@@ -13,6 +13,8 @@ dependencies = [
 ]
 
 [project.urls]
+Homepage = "https://business-mcp-ru.aifrontier.tech/"
+Documentation = "https://business-mcp-ru.aifrontier.tech/vk-api.html"
 Repository = "https://github.com/ilyautov/vk-mcp-ru"
 Issues = "https://github.com/ilyautov/vk-mcp-ru/issues"
 Changelog = "https://github.com/ilyautov/vk-mcp-ru/blob/main/CHANGELOG.md"
