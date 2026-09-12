@@ -3,7 +3,8 @@
   "name": "io.github.ilyautov/vk-mcp-ru",
   "title": "VK API MCP (RU) — товары, сообщества, реклама",
   "description": "VK API в ИИ-ассистенте: товары, сообщества, реклама, диалоги, статистика",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "websiteUrl": "https://business-mcp-ru.aifrontier.tech/vk-api.html",
   "repository": {
     "url": "https://github.com/ilyautov/vk-mcp-ru",
     "source": "github"
@@ -13,7 +14,7 @@
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "vk-mcp-ru",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

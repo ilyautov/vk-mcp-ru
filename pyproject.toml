@@ -1,6 +1,6 @@
 [project]
 name = "vk-mcp-ru"
-version = "0.2.1"
+version = "0.2.2"
 description = "VK API для ИИ-ассистентов: товары магазина сообщества, посты, рекламные кампании и статистика, диалоги с клиентами, лид-формы"
 keywords = ["mcp", "model-context-protocol", "vk", "vkontakte", "vk-api", "smm", "ads", "russia", "claude"]
 readme = "README.md"
