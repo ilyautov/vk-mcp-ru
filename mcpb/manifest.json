@@ -1,0 +1,62 @@
+{
+  "manifest_version": "0.3",
+  "name": "vk-mcp-ru",
+  "display_name": "VK: магазин сообщества, посты и реклама (vk-mcp-ru)",
+  "version": "0.2.2",
+  "description": "VK API прямо в Claude: товары магазина сообщества, посты, рекламные кампании и статистика, диалоги с клиентами, лид-формы.",
+  "long_description": "Подключает ассистента к VK API по вашему сервисному ключу или токену сообщества. Каталог из 373 методов, чтение идёт сразу, запись и необратимое действие требуют подтверждения. Ключ хранится локально и в чат не попадает.",
+  "author": {
+    "name": "Ilya Utov",
+    "url": "https://github.com/ilyautov"
+  },
+  "homepage": "https://business-mcp-ru.aifrontier.tech/vk-api.html",
+  "documentation": "https://github.com/ilyautov/vk-mcp-ru/blob/main/README.md",
+  "support": "https://github.com/ilyautov/vk-mcp-ru/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilyautov/vk-mcp-ru"
+  },
+  "license": "MIT",
+  "privacy_policies": [
+    "https://business-mcp-ru.aifrontier.tech/privacy.html"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "vk",
+    "vkontakte",
+    "vk-api",
+    "smm",
+    "ads",
+    "russia",
+    "claude"
+  ],
+  "server": {
+    "type": "python",
+    "entry_point": "server/serve.py",
+    "mcp_config": {
+      "command": "python",
+      "args": [
+        "${__dirname}/server/serve.py",
+        "vk"
+      ],
+      "env": {
+        "VK_TOKEN": "${user_config.vk_token}"
+      }
+    }
+  },
+  "user_config": {
+    "vk_token": {
+      "type": "string",
+      "title": "Токен VK",
+      "description": "dev.vk.com → приложение → сервисный ключ доступа, либо токен сообщества с нужными правами.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
