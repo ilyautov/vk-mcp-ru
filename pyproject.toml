@@ -1,6 +1,6 @@
 [project]
 name = "vk-mcp-ru"
-version = "0.2.2"
+version = "0.3.0"
 description = "VK API для ИИ-ассистентов: товары магазина сообщества, посты, рекламные кампании и статистика, диалоги с клиентами, лид-формы"
 keywords = ["mcp", "model-context-protocol", "vk", "vkontakte", "vk-api", "smm", "ads", "russia", "claude"]
 readme = "README.md"
@@ -9,7 +9,7 @@ license = "MIT"
 authors = [{ name = "Ilya Utov" }]
 dependencies = [
     # Ядро живёт отдельным пакетом: пять серверов делят его, а не копируют.
-    "schema-mcp-core>=0.2.0,<1",
+    "schema-mcp-core>=0.3.0,<1",
 ]
 
 [project.urls]
