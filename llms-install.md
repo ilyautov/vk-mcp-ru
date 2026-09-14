@@ -51,7 +51,8 @@ uvx vk-mcp-ru doctor
 показывает. Установка удалась, если в выводе есть строка с числом методов.
 
 После перезапуска клиента у агента появляются инструменты `vk_search_methods`,
-`vk_describe_method`, `vk_call_method`, `vk_map` и кабинеты. Начинать
+`vk_describe_method`, `vk_call_method` (чтение),
+`vk_write_method`, `vk_delete_method`, `vk_map` и кабинеты. Начинать
 стоит с `vk_map`: он показывает разделы каталога и не требует ключей.
 
 ## Что может пойти не так
